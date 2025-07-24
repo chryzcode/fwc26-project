@@ -26,7 +26,7 @@ export default function Book() {
           href="https://calendly.com/fwc26info/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cta to-amber-500 text-slate-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 animate-pulse"
+          className="px-8 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 animate-pulse"
         >
           Book Now <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
         </a>

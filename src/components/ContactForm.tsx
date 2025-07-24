@@ -61,7 +61,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-2xl">
+    <div className="w-full">
       {submitStatus && (
         <div
           className={`p-4 mb-6 rounded-lg ${
@@ -75,18 +75,18 @@ export default function ContactForm() {
       )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-slate-700 mb-1"
+              className="block text-sm text-left font-medium text-slate-700 mb-1"
             >
               Full Name *
             </label>
             <input
               id="name"
               type="text"
-              className={`w-full px-4 py-3 rounded-lg border ${
+              className={`w-full px-4 py-3 rounded-lg border text-left ${
                 errors.name ? 'border-red-500' : 'border-slate-300'
               }  focus:ring-primary focus:border-transparent transition-all`}
               placeholder="John Doe"
@@ -100,14 +100,14 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-slate-700 mb-1"
+              className="block text-sm text-left font-medium text-slate-700 mb-1"
             >
               Email Address *
             </label>
             <input
               id="email"
               type="email"
-              className={`w-full px-4 py-3 rounded-lg border ${
+              className={`w-full px-4 py-3 rounded-lg border text-left ${
                 errors.email ? 'border-red-500' : 'border-slate-300'
               } focus:ring-primary focus:border-transparent transition-all`}
               placeholder="you@example.com"
@@ -128,42 +128,23 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="phone"
-            className="block text-sm font-medium text-slate-700 mb-1"
+            className="block text-sm text-left font-medium text-slate-700 mb-1"
           >
             Phone Number
           </label>
           <input
             id="phone"
             type="tel"
-            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-primary focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-slate-300 text-left focus:ring-primary focus:border-transparent transition-all"
             placeholder="+1 (555) 000-0000"
             {...register('phone')}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
-            I'm interested in:
-          </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {interests.map((interest) => (
-              <label key={interest} className="flex items-center">
-                <input
-                  type="checkbox"
-                  value={interest}
-                  className="h-4 w-4 text-primary focus:ring-primary border-slate-300 rounded"
-                  {...register('interests')}
-                />
-                <span className="ml-2 text-slate-700">{interest}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-slate-700 mb-1"
+            className="block text-sm text-left font-medium text-slate-700 mb-1"
           >
             Your Message *
           </label>
@@ -190,7 +171,7 @@ export default function ContactForm() {
         <div className="flex items-center justify-center mt-6">
           <button
             type="submit"
-            className="px-8 py-3.5 border-2 border-primary rounded-xl bg-gradient-to-r from-primary to-accent text-primary font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg w-full focus:outline-none"
+            className="px-8 py-3.5 border-2 border-primary rounded-xl bg-gradient-to-r from-primary to-accent text-primary font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg focus:outline-none w-fit"
           >
             Send Message
           </button>

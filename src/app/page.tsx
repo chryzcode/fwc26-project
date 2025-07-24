@@ -57,10 +57,10 @@ export default function Home() {
             Transform your business with expert strategies to capitalize on the FIFA World Cup in Vancouver & Toronto. Turn 1.2M+ visitors into loyal customers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in animation-delay-300">
-            <Link href="https://calendly.com/fwc26info/30min" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl border-2 border-primary from-primary to-accent text-blue-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200">
-              Book Free Strategy Call <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+            <Link href="/book" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl border-2 border-primary from-primary to-accent text-blue-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200">
+              Book Strategy Call <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </Link>
-            <Link href="#services" className="px-8 py-3.5 rounded-xl border-2 border-primary text-primary font-semibold bg-white transition-all duration-200">
+            <Link href="/about-us" className="px-8 py-3.5 rounded-xl border-2 border-primary text-primary font-semibold bg-white transition-all duration-200">
               Learn More
             </Link>
           </div>
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* Market Opportunity vs. Problem */}
-      <section id="opportunity" className="py-20 md:py-28 bg-gradient-to-br from-white to-slate-50">
+      <section id="blog" className="py-20 md:py-28 bg-gradient-to-br from-white to-slate-50">
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">Market Opportunity</span>
@@ -112,6 +112,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mt-16 text-center">
+            <Link href="/blog" className="inline-flex items-center text-primary font-medium group">Read more<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg></Link>
           </div>
         </div>
       </section>
@@ -159,7 +162,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-16">
             <Link href="https://calendly.com/fwc26info/30min" target="_blank" rel="noopener noreferrer"  className="px-8 py-3.5 border-2 border-primary rounded-xl bg-gradient-to-r from-primary to-accent text-primary font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg w-full focus:outline-none ">
-              Book Your Free Consultation <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+              Book Your Consultation <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </Link>
           </div>
         </div>
@@ -221,36 +224,15 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-16 text-center">
-            <Link href="/testimonials" className="inline-flex items-center text-primary font-medium group">Read more success stories<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg></Link>
+            <Link href="/about-us" className="inline-flex items-center text-primary font-medium group">Read more about us<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg></Link>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">Get In Touch</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Let’s Build Your FIFA Strategy</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">Schedule a free consultation to discuss how we can help you capitalize on the FIFA World Cup 2026 opportunity.</p>
-          </div>
-          <div className="flex justify-center">
-            <div className="rounded-2xl bg-white/80 w-full max-w-lg shadow-lg p-8 flex flex-col gap-5 animate-fade-in">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">Send us a message</h3>
-              <ContactForm />
-            </div>
-          </div>
-          {/* Newsletter Signup below the form */}
-          <div className="flex justify-center mt-10">
-            <div className="rounded-2xl bg-white/80 w-full max-w-xl shadow-lg p-6 border border-blue-100 animate-fade-in">
-              <h4 className="text-lg font-semibold text-blue-900 mb-5">Subscribe to our newsletter</h4>
-              <NewsletterSignup />
-            </div>
-          </div>
-        </div>
+      
         {/* Chat Widget (floating, always visible) */}
         <SimpleChatWidget />
-      </section>
+    
     </main>
   );
 }

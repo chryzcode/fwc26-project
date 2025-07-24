@@ -1,42 +1,42 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MarketOpportunity() {
+export default function MarketOpportunityBlog() {
   return (
-    <main className="bg-white">
-      <section className="py-20 md:py-28 bg-gradient-to-br from-blue-50 via-white to-blue-100 grid md:grid-cols-2 gap-10 items-center min-h-[60vh] animate-fade-in">
-        <div className="rounded-2xl bg-white/80 p-10 shadow-lg flex flex-col items-start animate-fade-in">
-          <h1 className="text-4xl font-bold mb-6 text-blue-900 flex items-center gap-2">
-            <span className="inline-block bg-blue-100 p-2 rounded-full"><Image src="/globe.svg" alt="Globe" width={32} height={32} /></span>
-            Market Opportunity
-          </h1>
-          <ul className="space-y-4 text-blue-800 text-lg">
-            <li>⚽ Over 1.2M spectators across Vancouver & Toronto</li>
-            <li>🎉 High demand for fan engagement, food, merch & digital experiences</li>
-            <li>💰 Multi-million dollar untapped revenue potential for small businesses</li>
-          </ul>
-        </div>
-        <div className="rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 shadow-lg flex flex-col items-start animate-fade-in">
-          <h2 className="text-3xl font-semibold mb-5 text-white flex items-center gap-2">
-            <span className="inline-block bg-blue-100 p-2 rounded-full"><Image src="/file.svg" alt="Problem" width={28} height={28} /></span>
-            The Problem
-          </h2>
-          <ul className="space-y-4 text-slate-200 text-lg">
-            <li>❌ Businesses lack event-specific strategy</li>
-            <li>⏰ Tight timelines & high competition</li>
-            <li>⚠️ Risk of missed revenue without a plan</li>
-          </ul>
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <p className="text-slate-300 mb-4">Don't miss out on this once-in-a-generation opportunity.</p>
-            <Link href="/services" className="inline-flex items-center text-white font-medium group">
-              See Our Solutions
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+    <main className="max-w-2xl mx-auto py-12 px-4">
+      <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src="/globe.svg"
+          alt="Market Opportunity Cover"
+          width={800}
+          height={320}
+          className="w-full h-64 object-cover bg-blue-50"
+        />
+      </div>
+      <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">Market Opportunity vs. Problem</h1>
+      <p className="text-lg text-slate-700 mb-6">By FWC 2026 Team • June 2024</p>
+      <article className="prose prose-blue max-w-none">
+        <p>
+          In the world of business, understanding the difference between a market opportunity and a problem is crucial for success. A market opportunity is a favorable situation in which a company can introduce a new product or service to meet an unmet need. A problem, on the other hand, is a pain point experienced by customers that may or may not have a viable solution.
+        </p>
+        <p>
+          <strong>Identifying true opportunities</strong> requires research, creativity, and a deep understanding of your target audience. Sometimes, what appears to be a problem is actually a symptom of a larger, more lucrative opportunity.
+        </p>
+        <ul>
+          <li>Look for trends and shifts in consumer behavior.</li>
+          <li>Validate your assumptions with real data.</li>
+          <li>Be willing to pivot as you learn more about your market.</li>
+        </ul>
+        <p>
+          At FWC 2026, we help businesses distinguish between chasing problems and seizing real opportunities. Our team provides strategic insights, actionable plans, and hands-on support to ensure your venture is positioned for growth.
+        </p>
+        <blockquote>
+          "Opportunities are usually disguised as hard work, so most people don't recognize them." – Ann Landers
+        </blockquote>
+        <p>
+          Ready to turn your challenges into opportunities? <a href="#contact">Contact us</a> today to start your journey.
+        </p>
+      </article>
     </main>
   );
 }
