@@ -48,7 +48,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <footer className="mt-16 bg-white text-blue-900 px-4 py-12 border-t border-blue-100 shadow-inner">
-  <div className="max-w-3xl mx-auto flex flex-col gap-12 items-center text-center">
+  <div id="contact" className="max-w-3xl mx-auto flex flex-col gap-12 items-center text-center">
     <div className="w-full flex flex-col items-center">
       <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
       <ContactForm />

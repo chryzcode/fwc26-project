@@ -12,7 +12,7 @@ export default function MarketOpportunityBlog() {
           height={320}
           className="w-full h-64 object-cover bg-blue-50"
         />
-      </div>
+        </div>
       <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">Market Opportunity vs. Problem</h1>
       <p className="text-lg text-slate-700 mb-6">By FWC 2026 Team • June 2024</p>
       <article className="prose prose-blue max-w-none">
@@ -26,7 +26,7 @@ export default function MarketOpportunityBlog() {
           <li>Look for trends and shifts in consumer behavior.</li>
           <li>Validate your assumptions with real data.</li>
           <li>Be willing to pivot as you learn more about your market.</li>
-        </ul>
+          </ul>
         <p>
           At FWC 2026, we help businesses distinguish between chasing problems and seizing real opportunities. Our team provides strategic insights, actionable plans, and hands-on support to ensure your venture is positioned for growth.
         </p>

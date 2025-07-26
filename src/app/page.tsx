@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ContactForm from "@/components/ContactForm";
 import CountdownTimer from "@/components/CountdownTimer";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import SimpleChatWidget from "@/components/SimpleChatWidget";
 
 export const metadata = {
@@ -68,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* Market Opportunity vs. Problem */}
-      <section id="blog" className="py-20 md:py-28 bg-gradient-to-br from-white to-slate-50">
+      <section id="market-opportunity" className="py-20 md:py-28 bg-gradient-to-br from-white to-slate-50">
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">Market Opportunity</span>
@@ -127,43 +125,53 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Comprehensive <span className="text-primary">Business Solutions</span></h2>
             <p className="text-lg text-slate-600">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch">
             {/* Service Cards */}
-            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
+            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">💡</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Strategy Sessions</h3>
-              <p className="text-slate-600 mb-4">Personalized consultations to validate your business idea and create a winning strategy for FIFA 2026.</p>
-              <ul className="space-y-2 text-slate-700 text-sm">
-                <li>• Market analysis</li>
-                <li>• Revenue modeling</li>
-                <li>• Competitive positioning</li>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">Strategy Sessions</h3>
+              <p className="text-slate-600 mb-4 text-sm text-center">Personalized consultations to validate your business idea and create a winning strategy for FIFA 2026.</p>
+              <ul className="space-y-2 text-slate-700 text-sm text-left w-full mb-4">
+                <li>Market analysis</li>
+                <li>Revenue modeling</li>
+                <li>Competitive positioning</li>
               </ul>
+              <div className="mt-auto pt-4 w-full flex justify-center">
+                <Link href="/book" target="_blank" rel="noopener noreferrer" className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-blue-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center">
+                  Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </Link>
+              </div>
             </div>
-            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
+            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">📊</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Monetization Blueprint</h3>
-              <p className="text-slate-600 mb-4">Custom plan to maximize your revenue during the tournament with clear action steps.</p>
-              <ul className="space-y-2 text-slate-700 text-sm">
-                <li>• Pricing strategy</li>
-                <li>• Partnership opportunities</li>
-                <li>• Revenue streams</li>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">Monetization Blueprint</h3>
+              <p className="text-slate-600 mb-4 text-sm text-center">Custom plan to maximize your revenue during the tournament with clear action steps.</p>
+              <ul className="space-y-2 text-slate-700 text-sm text-left w-full mb-4">
+                <li>Pricing strategy</li>
+                <li>Partnership opportunities</li>
+                <li>Revenue streams</li>
               </ul>
+              <div className="mt-auto pt-4 w-full flex justify-center">
+                <Link href="/book" target="_blank" rel="noopener noreferrer" className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-blue-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center">
+                  Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </Link>
+              </div>
             </div>
-            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
+            <div className="rounded-2xl bg-white/80 p-8 shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">🚀</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Full-Service Launch</h3>
-              <p className="text-slate-600 mb-4">End-to-end support to bring your FIFA 2026 business concept to life.</p>
-              <ul className="space-y-2 text-slate-700 text-sm">
-                <li>• Brand development</li>
-                <li>• Marketing execution</li>
-                <li>• Operational setup</li>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center">Full-Service Launch</h3>
+              <p className="text-slate-600 mb-4 text-sm text-center">End-to-end support to bring your FIFA 2026 business concept to life.</p>
+              <ul className="space-y-2 text-slate-700 text-sm text-left w-full mb-4">
+                <li>Brand development</li>
+                <li>Marketing execution</li>
+                <li>Operational setup</li>
               </ul>
+              <div className="mt-auto pt-4 w-full flex justify-center">
+                <Link href="/book" target="_blank" rel="noopener noreferrer" className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-blue-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center">
+                  Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="text-center mt-16">
-            <Link href="https://calendly.com/fwc26info/30min" target="_blank" rel="noopener noreferrer"  className="px-8 py-3.5 border-2 border-primary rounded-xl bg-gradient-to-r from-primary to-accent text-primary font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg w-full focus:outline-none ">
-              Book Your Consultation <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-            </Link>
           </div>
         </div>
       </section>
@@ -176,7 +184,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Trusted by <span className="text-primary">Businesses</span> Like Yours</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our clients say about working with us.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
@@ -231,7 +239,7 @@ export default function Home() {
 
       
         {/* Chat Widget (floating, always visible) */}
-        <SimpleChatWidget />
+        <SimpleChatWidget/>
     
     </main>
   );
