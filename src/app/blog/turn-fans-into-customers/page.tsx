@@ -23,7 +23,7 @@ export default function TurnFansIntoCustomersBlog() {
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4">Why FWC26 Is a Game-Changer for Local Business</h2>
         <p>
-          The FIFA World Cup isn't just a sports event — it's a once-in-a-generation economic catalyst for cities, entrepreneurs, and innovators. With the 2026 tournament landing in Vancouver and Toronto, there's never been a better time to activate your business for global impact.
+          The FIFA World Cup isn&apos;t just a sports event — it&apos;s a once-in-a-generation economic catalyst for cities, entrepreneurs, and innovators. With the 2026 tournament landing in Vancouver and Toronto, there&apos;s never been a better time to activate your business for global impact.
         </p>
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">Key Insights & Value Propositions</h2>
@@ -40,7 +40,7 @@ export default function TurnFansIntoCustomersBlog() {
 
         <h3 className="text-xl font-bold text-blue-900 mb-3">Untapped Revenue Potential</h3>
         <p>
-          Most small businesses don't have the time or tools to tailor their offers for a global event. With the right strategy, even solo entrepreneurs can unlock 5- to 6-figure revenue opportunities.
+          Most small businesses don&apos;t have the time or tools to tailor their offers for a global event. With the right strategy, even solo entrepreneurs can unlock 5- to 6-figure revenue opportunities.
         </p>
 
         <h3 className="text-xl font-bold text-blue-900 mb-3">Brand Visibility on a World Stage</h3>
@@ -55,14 +55,14 @@ export default function TurnFansIntoCustomersBlog() {
 
         <h3 className="text-xl font-bold text-blue-900 mb-3">Small Businesses are the Local Heroes</h3>
         <p>
-          FIFA fans crave authentic experiences, meaning they'll often choose a neighbourhood pop-up, cultural vendor, or niche digital product over a big-box alternative. That's your edge.
+          FIFA fans crave authentic experiences, meaning they&apos;ll often choose a neighbourhood pop-up, cultural vendor, or niche digital product over a big-box alternative. That&apos;s your edge.
         </p>
 
         <div className="bg-blue-400 text-white p-6 rounded-xl my-8">
           <h3 className="text-xl font-bold mb-3">Let's Meet to Build Your FIFA WORLD CUP 2026 Business Advantage Strategy</h3>
-          <p className="mb-4">
-            Whether you're running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
-          </p>
+                  <p className="mb-4">
+          Whether you&apos;re running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
+        </p>
           <p className="mb-4">
             Book a strategy session today and let's develop a custom plan to help you monetize this global event.
           </p>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function MarketOpportunityBlog() {
   return (
@@ -31,7 +30,7 @@ export default function MarketOpportunityBlog() {
           At FWC 2026, we help businesses distinguish between chasing problems and seizing real opportunities. Our team provides strategic insights, actionable plans, and hands-on support to ensure your venture is positioned for growth.
         </p>
         <blockquote>
-          "Opportunities are usually disguised as hard work, so most people don't recognize them." – Ann Landers
+          &quot;Opportunities are usually disguised as hard work, so most people don&apos;t recognize them.&quot; – Ann Landers
         </blockquote>
         <p>
           Ready to turn your challenges into opportunities? <a href="#contact">Contact us</a> today to start your journey.

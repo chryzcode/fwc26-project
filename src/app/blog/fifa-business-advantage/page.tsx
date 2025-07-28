@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import BlogPost from "@/components/BlogPost";
 import { getBlogPost } from "@/data/blog-posts";
@@ -13,13 +12,13 @@ export default function FifaBusinessAdvantageBlog() {
   return (
     <BlogPost post={post}>
       <p className="text-lg text-slate-700 mb-6">
-        Are you ready to take your business to the next level and make the most out of the upcoming FIFA World Cup 2026 in Vancouver & Toronto?
+        Are you ready to take your business to the next level and make the most out of the upcoming FIFA World Cup 2026 in Vancouver &amp; Toronto?
       </p>
 
       <h2 className="text-2xl font-bold text-blue-900 mb-4">What to Expect in This Session</h2>
-      <p>
-        In this 30–45 min consultation, we'll explore how your business or idea can profit from the FIFA World Cup 2026. Whether you're a local entrepreneur, small business owner, or creative professional, this session will help uncover opportunities tailored to your niche.
-      </p>
+              <p>
+          In this 30–45 min consultation, we&apos;ll explore how your business or idea can profit from the FIFA World Cup 2026. Whether you&apos;re a local entrepreneur, small business owner, or creative professional, this session will help uncover opportunities tailored to your niche.
+        </p>
 
       <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">Meeting Agenda</h2>
       <ul className="space-y-3 text-slate-700">
@@ -48,13 +47,13 @@ export default function FifaBusinessAdvantageBlog() {
       <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
         <h3 className="text-xl font-bold text-blue-900 mb-3">Why This Matters</h3>
         <p className="text-blue-800">
-          With over 1.2 million spectators expected across Vancouver and Toronto, local businesses stand to benefit from a multi-million-dollar surge in spending. Yet many lack the tools, strategy, or time to act. We're here to change that.
+          With over 1.2 million spectators expected across Vancouver and Toronto, local businesses stand to benefit from a multi-million-dollar surge in spending. Yet many lack the tools, strategy, or time to act. We&apos;re here to change that.
         </p>
       </div>
 
       <h2 className="text-2xl font-bold text-blue-900 mb-4">After the Session</h2>
       <p className="mb-4">
-        You'll have the option to move into <strong>Tier 2</strong>, which includes:
+        You&apos;ll have the option to move into <strong>Tier 2</strong>, which includes:
       </p>
       <ul className="space-y-3 text-slate-700 mb-6">
         <li className="flex items-start gap-3">
@@ -74,7 +73,7 @@ export default function FifaBusinessAdvantageBlog() {
       <div className="bg-blue-400 text-white p-6 rounded-xl my-8">
         <h3 className="text-xl font-bold mb-3">Let's Meet to Build Your FIFA WORLD CUP 2026 Business Advantage Strategy</h3>
         <p className="mb-4">
-          Whether you're running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
+          Whether you&apos;re running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
         </p>
         <Link 
           href="/#contact" 

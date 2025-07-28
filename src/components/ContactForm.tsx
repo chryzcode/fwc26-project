@@ -12,7 +12,6 @@ type FormData = {
 };
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     success: boolean;
     message: string;
@@ -34,7 +33,6 @@ export default function ContactForm() {
   ];
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
@@ -55,8 +53,6 @@ export default function ContactForm() {
         success: false,
         message: 'Something went wrong. Please try again later.',
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 

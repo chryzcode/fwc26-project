@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function ServicesAboutUs() {
   return (
@@ -43,7 +42,7 @@ export default function ServicesAboutUs() {
         <ul className="space-y-6">
           <li className="bg-white rounded-xl shadow p-6 border border-blue-100">
             <h3 className="text-xl font-semibold text-blue-900 mb-2">Strategy Sessions</h3>
-            <p className="text-slate-700">Personalized consultations to identify your business's World Cup opportunities and craft a winning plan.</p>
+            <p className="text-slate-700">Personalized consultations to identify your business&apos;s World Cup opportunities and craft a winning plan.</p>
           </li>
           <li className="bg-white rounded-xl shadow p-6 border border-blue-100">
             <h3 className="text-xl font-semibold text-blue-900 mb-2">Monetization Blueprint</h3>

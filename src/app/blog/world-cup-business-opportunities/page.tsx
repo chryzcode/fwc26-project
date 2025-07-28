@@ -14,13 +14,13 @@ export default function WorldCupBusinessOpportunitiesBlog() {
     <BlogPost post={post}>
         <h2 className="text-2xl font-bold text-blue-900 mb-4">INTRODUCTION</h2>
         <p>
-          The FIFA World Cup 2026 is more than just a sporting event, it's a multi-billion dollar opportunity for entrepreneurs and small business owners. With matches taking place in Vancouver and Toronto, this global event will bring millions of fans, tourists, and media attention to Canada.
+          The FIFA World Cup 2026 is more than just a sporting event, it&apos;s a multi-billion dollar opportunity for entrepreneurs and small business owners. With matches taking place in Vancouver and Toronto, this global event will bring millions of fans, tourists, and media attention to Canada.
         </p>
         <p>
           Whether you run a local shop, offer services, or are just starting out, this guide offers 10 real, practical ways to make money during the World Cup, no big budget required.
         </p>
         <p>
-          Let's turn your hustle into a winning game plan.
+          Let&apos;s turn your hustle into a winning game plan.
         </p>
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">1. Sell Themed Merchandise</h2>
@@ -28,7 +28,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           Design and sell World Cup-inspired merch — think T-shirts, scarves, wristbands, tote bags, and flags.
         </p>
         <p>
-          <strong>Pro Tip:</strong> Focus on local pride (e.g., "Toronto to the World", "VanCity United") or fan humor. Use platforms like Shopify, Printful, or Etsy to launch quickly.
+          <strong>Pro Tip:</strong> Focus on local pride (e.g., &quot;Toronto to the World&quot;, &quot;VanCity United&quot;) or fan humor. Use platforms like Shopify, Printful, or Etsy to launch quickly.
         </p>
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">2. Launch a Pop-Up Food Stall or Mobile Cart</h2>
@@ -36,7 +36,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           Food trucks and pop-ups near match zones or viewing parties can bring in serious revenue.
         </p>
         <p>
-          <strong>Hot Ideas:</strong> Offer themed menu items (e.g., "Messi Wrap," "Vancouver Special Bowl"), partner with bars, or join vendor fairs.
+          <strong>Hot Ideas:</strong> Offer themed menu items (e.g., &quot;Messi Wrap,&quot; &quot;Vancouver Special Bowl&quot;), partner with bars, or join vendor fairs.
         </p>
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">3. Rent Out Your Space (Airbnb-Style)</h2>
@@ -44,7 +44,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           Got a room, condo, or basement? Turn it into a short-term rental for traveling fans.
         </p>
         <p>
-          <strong>Pro Tip:</strong> Make your listing "World Cup Ready" with flags, snacks, and nearby transport info.
+          <strong>Pro Tip:</strong> Make your listing &quot;World Cup Ready&quot; with flags, snacks, and nearby transport info.
         </p>
 
         <h2 className="text-2xl font-bold text-blue-900 mb-4 mt-8">4. Host Fan Watch Parties or Experiences</h2>
@@ -86,7 +86,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
         <div className="bg-blue-400 text-white p-6 rounded-xl my-8">
           <h3 className="text-xl font-bold mb-3">Let's Meet to Build Your FIFA WORLD CUP 2026 Business Advantage Strategy</h3>
           <p className="mb-4">
-            Whether you're running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
+            Whether you&apos;re running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
           </p>
           <Link 
             href="/#contact" 
