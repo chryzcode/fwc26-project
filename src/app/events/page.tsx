@@ -161,7 +161,7 @@ export default function EventsPage() {
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-2xl">📝</div>
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold mb-4">1</div>
               <h3 className="font-bold text-lg mb-2">Join the Waitlist</h3>
               <ul className="text-slate-600 text-sm mb-2">
                 <li>Enter your name, email, and match preference</li>
@@ -170,14 +170,14 @@ export default function EventsPage() {
               </ul>
             </div>
             <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-2xl">🔎</div>
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search for You</h3>
               <ul className="text-slate-600 text-sm mb-2">
                 <li>We source tickets from verified resellers or official channels</li>
               </ul>
             </div>
             <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-2xl">📧</div>
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold mb-4">3</div>
               <h3 className="font-bold text-lg mb-2">Get Notified & Purchase</h3>
               <ul className="text-slate-600 text-sm mb-2">
                 <li>Once a ticket is available, you’ll be emailed to complete the purchase</li>

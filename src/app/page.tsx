@@ -59,7 +59,7 @@ export default function Home() {
         {/* Content above video */}
         <div className="relative z-10 w-full">
           <div className="container relative z-20 px-4 pt-10 mx-auto flex flex-col items-center text-center max-w-6xl">
-            <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-lg font-bold rounded-full bg-white/20 text-white animate-fade-in" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>🚀 Exclusive FIFA 2026 Opportunity</div>
+            <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-lg font-bold rounded-full bg-white/20 text-white animate-fade-in" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Exclusive FIFA 2026 Opportunity</div>
             
 
             <div className="my-20">
@@ -143,7 +143,6 @@ export default function Home() {
             <div className="rounded-2xl relative overflow-hidden shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full" style={{backgroundImage: 'url(/Strategy-Session.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className="absolute inset-0 bg-black/60" />
               <div className="relative z-10 flex flex-col items-center h-full w-full p-8">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">💡</div>
                 <h3 className="text-xl font-bold text-white mb-3 text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Strategy Sessions</h3>
                 <p className="text-white mb-4 text-sm text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Personalized consultations to validate your business idea and create a winning strategy for FIFA 2026.</p>
                 <ul className="space-y-2 text-white text-sm text-left w-full mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
@@ -159,7 +158,6 @@ export default function Home() {
             <div className="rounded-2xl relative overflow-hidden shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full" style={{backgroundImage: 'url(/Full-Monetization-Blueprint.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className="absolute inset-0 bg-black/60" />
               <div className="relative z-10 flex flex-col items-center h-full w-full p-8">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">📊</div>
                 <h3 className="text-xl font-bold text-white mb-3 text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Monetization Blueprint</h3>
                 <p className="text-white mb-4 text-sm text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Custom plan to maximize your revenue during the tournament with clear action steps.</p>
                 <ul className="space-y-2 text-white text-sm text-left w-full mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
@@ -175,7 +173,6 @@ export default function Home() {
             <div className="rounded-2xl relative overflow-hidden shadow-lg hover:scale-105 transition-transform flex flex-col items-center h-full" style={{backgroundImage: 'url(/Business-Launch-Support.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className="absolute inset-0 bg-black/60" />
               <div className="relative z-10 flex flex-col items-center h-full w-full p-8">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-2xl">🚀</div>
                 <h3 className="text-xl font-bold text-white mb-3 text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Full-Service Launch</h3>
                 <p className="text-white mb-4 text-sm text-center" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support to bring your FIFA 2026 business concept to life.</p>
                 <ul className="space-y-2 text-white text-sm text-left w-full mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
