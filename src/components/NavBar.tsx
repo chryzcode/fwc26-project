@@ -35,7 +35,7 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Brand */}
         <Link href="/" className="text-xl font-bold text-blue-900 tracking-wide">
-        FWC26 
+        FWC Marketing Group
         </Link>
 
         {/* Desktop Nav */}

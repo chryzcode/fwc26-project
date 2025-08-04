@@ -8,6 +8,8 @@ type Match = {
   teams: string[];
   venue: string;
   status: string;
+  stage: string;
+  matchDay: number;
   flag1: string;
   flag2: string;
 };
@@ -20,6 +22,18 @@ interface MatchCardProps {
 export default function MatchCard({ match, onJoinWaitlist }: MatchCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+      {/* Match Stage and Day */}
+      <div className="px-6 pt-4 pb-2">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+            {match.stage}
+          </span>
+          <span className="text-sm text-gray-500">
+            Match Day {match.matchDay}
+          </span>
+        </div>
+      </div>
+      
       {/* Match Header - Teams */}
       <div className="p-6 pb-4">
         <div className="flex items-center justify-center gap-4 mb-4">

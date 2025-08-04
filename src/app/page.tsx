@@ -59,7 +59,8 @@ export default function Home() {
         {/* Content above video */}
         <div className="relative z-10 w-full">
           <div className="container relative z-20 px-4 pt-10 mx-auto flex flex-col items-center text-center max-w-6xl">
-            <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-lg font-bold rounded-full bg-white/20 text-white animate-fade-in" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Exclusive FIFA 2026 Opportunity</div>
+            <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-lg font-bold rounded-full bg-white/20 text-white animate-fade-in" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>FWC26 Small Business & Entrepreneur Initiative
+            </div>
             
 
             <div className="my-20">
@@ -67,9 +68,9 @@ export default function Home() {
             <p className="text-3xl text-white mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-200" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Helping Businesses Capitalize on the FIFA World Cup 2026 in Vancouver & Toronto</p>
             </div>
         
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in animation-delay-300">
-              <a href="#commercial-opportunities" className="px-8 py-3.5 rounded-xl border-2 border-white text-white font-bold text-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">Discover Revenue Opportunities</a>
-              <Link href="/about-us" className="px-8 py-3.5 rounded-xl border-2 border-white text-white font-bold text-lg bg-white/10 hover:bg-white/20 transition-all duration-200">Learn More</Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-in animation-delay-300">
+              <a href="/blog" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 min-w-[200px] text-center">Discover Opportunities</a>
+              <Link href="/book" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 min-w-[200px] text-center">Book Strategy Call</Link>
             </div>
           </div>
         </div>

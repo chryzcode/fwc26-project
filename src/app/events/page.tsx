@@ -10,67 +10,119 @@ type Match = {
   teams: string[];
   venue: string;
   status: string;
+  stage: string;
+  matchDay: number;
   flag1: string;
   flag2: string;
 };
 
 const matches: Match[] = [
-  // Example data, replace with real data or fetch from API
+  // Group Stage Matches
   {
     id: 1,
-    city: 'Toronto',
-    date: '2026-06-14',
-    time: '19:00',
-    teams: ['Canada', 'France'],
-    venue: 'BMO Field',
+    city: 'Vancouver',
+    date: '2026-06-13',
+    time: 'TBA',
+    teams: ['TBA', 'TBA'],
+    venue: 'BC Place Vancouver',
     status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 6,
     flag1: '/blog-image/fans-into-client.avif', // Placeholder
     flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
   },
   {
     id: 2,
     city: 'Vancouver',
-    date: '2026-06-16',
-    time: '16:00',
-    teams: ['USA', 'Mexico'],
-    venue: 'BC Place',
+    date: '2026-06-18',
+    time: 'TBA',
+    teams: ['Canada', 'TBA'],
+    venue: 'BC Place Vancouver',
     status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 27,
     flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
     flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
   },
   {
     id: 3,
-    city: 'Montreal',
-    date: '2026-06-18',
-    time: '20:00',
-    teams: ['Brazil', 'Argentina'],
-    venue: 'Olympic Stadium',
+    city: 'Vancouver',
+    date: '2026-06-21',
+    time: 'TBA',
+    teams: ['TBA', 'TBA'],
+    venue: 'BC Place Vancouver',
     status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 40,
     flag1: '/blog-image/fans-into-client.avif', // Placeholder
     flag2: '/blog-image/fifa-businness advantage.avif', // Placeholder
   },
   {
     id: 4,
-    city: 'Edmonton',
-    date: '2026-06-20',
-    time: '18:30',
-    teams: ['Germany', 'Spain'],
-    venue: 'Commonwealth Stadium',
+    city: 'Vancouver',
+    date: '2026-06-24',
+    time: 'TBA',
+    teams: ['Canada', 'TBA'],
+    venue: 'BC Place Vancouver',
     status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 51,
     flag1: '/blog-image/10-ways-to-make.avif', // Placeholder
     flag2: '/blog-image/fans-into-client.avif', // Placeholder
+  },
+  {
+    id: 5,
+    city: 'Vancouver',
+    date: '2026-06-26',
+    time: 'TBA',
+    teams: ['TBA', 'TBA'],
+    venue: 'BC Place Vancouver',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 64,
+    flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
+    flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
+  },
+  // Round of 32
+  {
+    id: 6,
+    city: 'Vancouver',
+    date: '2026-07-02',
+    time: 'TBA',
+    teams: ['TBA', 'TBA'],
+    venue: 'BC Place Vancouver',
+    status: 'Waitlist Open',
+    stage: 'Round of 32',
+    matchDay: 85,
+    flag1: '/blog-image/fans-into-client.avif', // Placeholder
+    flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
+  },
+  // Round of 16
+  {
+    id: 7,
+    city: 'Vancouver',
+    date: '2026-07-07',
+    time: 'TBA',
+    teams: ['TBA', 'TBA'],
+    venue: 'BC Place Vancouver',
+    status: 'Waitlist Open',
+    stage: 'Round of 16',
+    matchDay: 96,
+    flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
+    flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
   },
 ];
 
 export default function EventsPage() {
-  const [filter, setFilter] = useState({ city: '', date: '', team: '' });
+  const [filter, setFilter] = useState({ city: '', date: '', team: '', stage: '' });
   const [showModal, setShowModal] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
   const filteredMatches = matches.filter((m) =>
     (!filter.city || m.city === filter.city) &&
     (!filter.date || m.date === filter.date) &&
-    (!filter.team || m.teams.includes(filter.team))
+    (!filter.team || m.teams.includes(filter.team)) &&
+    (!filter.stage || m.stage === filter.stage)
   );
 
   return (
@@ -92,10 +144,7 @@ export default function EventsPage() {
             <div className="relative">
               <select className="px-4 py-2 pr-8 min-w-[160px] rounded border appearance-none" value={filter.city} onChange={e => setFilter(f => ({...f, city: e.target.value}))}>
                 <option value="">All Cities</option>
-                <option value="Toronto">Toronto</option>
                 <option value="Vancouver">Vancouver</option>
-                <option value="Montreal">Montreal</option>
-                <option value="Edmonton">Edmonton</option>
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -106,30 +155,81 @@ export default function EventsPage() {
               <select className="px-4 py-2 pr-8 min-w-[160px] rounded border appearance-none" value={filter.team} onChange={e => setFilter(f => ({...f, team: e.target.value}))}>
                 <option value="">All Teams</option>
                 <option value="Canada">Canada</option>
-                <option value="France">France</option>
-                <option value="USA">USA</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Brazil">Brazil</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Germany">Germany</option>
-                <option value="Spain">Spain</option>
+                <option value="TBA">TBA</option>
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
+            </div>
+            <div className="relative">
+              <select className="px-4 py-2 pr-8 min-w-[160px] rounded border appearance-none" value={filter.stage} onChange={e => setFilter(f => ({...f, stage: e.target.value}))}>
+                <option value="">All Stages</option>
+                <option value="Group Stage">Group Stage</option>
+                <option value="Round of 32">Round of 32</option>
+                <option value="Round of 16">Round of 16</option>
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {filteredMatches.map(match => (
-              <MatchCard 
-                key={match.id} 
-                match={match} 
-                onJoinWaitlist={(match) => {
-                  setShowModal(true);
-                  setSelectedMatch(match);
-                }}
-              />
-            ))}
+          <div className="max-w-6xl mx-auto my-12">
+            {/* Group Stage Matches */}
+            {filteredMatches.filter(match => match.stage === 'Group Stage').length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-blue-500 mb-10 text-center" >Group Stage Matches</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                  {filteredMatches.filter(match => match.stage === 'Group Stage').map(match => (
+                    <MatchCard 
+                      key={match.id} 
+                      match={match} 
+                      onJoinWaitlist={(match) => {
+                        setShowModal(true);
+                        setSelectedMatch(match);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Round of 32 Matches */}
+            {filteredMatches.filter(match => match.stage === 'Round of 32').length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-blue-500 mb-10 text-center" >Round of 32 Matches</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                  {filteredMatches.filter(match => match.stage === 'Round of 32').map(match => (
+                    <MatchCard 
+                      key={match.id} 
+                      match={match} 
+                      onJoinWaitlist={(match) => {
+                        setShowModal(true);
+                        setSelectedMatch(match);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Round of 16 Matches */}
+            {filteredMatches.filter(match => match.stage === 'Round of 16').length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-blue-500 mb-10 text-center" >Round of 16 Matches</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                  {filteredMatches.filter(match => match.stage === 'Round of 16').map(match => (
+                    <MatchCard 
+                      key={match.id} 
+                      match={match} 
+                      onJoinWaitlist={(match) => {
+                        setShowModal(true);
+                        setSelectedMatch(match);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
