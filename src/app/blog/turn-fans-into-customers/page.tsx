@@ -13,7 +13,7 @@ export default function TurnFansIntoCustomersBlog() {
   return (
     <BlogPost post={post}>
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-          <h3 className="text-xl font-bold text-primary mb-3">Key Highlights</h3>
+          <h3 className="text-xl font-bold text-blue-600 mb-3">Key Highlights</h3>
           <ul className="text-secondary space-y-2">
             <li>• Over 1.2M spectators across Vancouver & Toronto</li>
             <li>• High demand for fan engagement, food, merch & digital experiences</li>
@@ -21,12 +21,12 @@ export default function TurnFansIntoCustomersBlog() {
           </ul>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary mb-4">Why FWC26 Is a Game-Changer for Local Business</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4">Why FWC26 Is a Game-Changer for Local Business</h2>
         <p className="text-gray-900">
           The FIFA World Cup isn&apos;t just a sports event — it&apos;s a once-in-a-generation economic catalyst for cities, entrepreneurs, and innovators. With the 2026 tournament landing in Vancouver and Toronto, there&apos;s never been a better time to activate your business for global impact.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">Key Insights & Value Propositions</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">Key Insights & Value Propositions</h2>
         
         <h3 className="text-xl font-bold text-secondary mb-3">Massive Foot Traffic & Tourism</h3>
         <p className="text-gray-900">
@@ -59,7 +59,7 @@ export default function TurnFansIntoCustomersBlog() {
         </p>
 
         <div className="bg-blue-400 text-white p-6 rounded-xl my-8">
-          <h3 className="text-xl font-bold text-primary mb-3">Let's Meet to Build Your FIFA WORLD CUP 2026 Business Advantage Strategy</h3>
+          <h3 className="text-xl font-bold text-blue-600 mb-3">Let's Meet to Build Your FIFA WORLD CUP 2026 Business Advantage Strategy</h3>
                   <p className="mb-4">
           Whether you&apos;re running an existing business or exploring a new idea, now is the time to prepare for the massive opportunities coming with the FIFA World Cup.
         </p>
@@ -75,11 +75,11 @@ export default function TurnFansIntoCustomersBlog() {
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
-          <h3 className="text-xl font-bold text-primary mb-3">Download Free Ebook!</h3>
+          <h3 className="text-xl font-bold text-blue-600 mb-3">Download Free Ebook!</h3>
           <Link href="/FWC26 Business strategy - Ebook.pdf" target="_blank" className="flex items-center gap-3 hover:bg-gray-50 p-2 rounded transition-colors">
             <Image src="/file.svg" alt="PDF File" width={32} height={40} className="w-8 h-10" />
             <div>
-              <p className="font-medium text-primary">FWC26 Business strategy - Ebook</p>
+              <p className="font-medium text-blue-600">FWC26 Business strategy - Ebook</p>
               <p className="text-sm text-gray-600">Download PDF • 7.91MB</p>
             </div>
           </Link>

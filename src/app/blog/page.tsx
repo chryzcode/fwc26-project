@@ -34,7 +34,7 @@ export default function BlogIndex() {
               </div>
 
               <p className="text-slate-700 mb-5">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="text-primary font-semibold">Read more →</Link>
+                              <Link href={`/blog/${post.slug}`} className="text-blue-600 font-semibold">Read more →</Link>
             </div>
           </li>
         ))}
