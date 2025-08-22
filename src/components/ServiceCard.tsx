@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { loadStripe } from '@stripe/stripe-js';
 
 interface ServiceCardProps {
   title: string;
@@ -11,15 +11,7 @@ interface ServiceCardProps {
   serviceName?: string;
   amount?: number;
   serviceDescription?: string;
-}
-
-// Stripe loader function
-async function loadStripe(publishableKey: string) {
-  if (typeof window !== 'undefined') {
-    const { loadStripe } = await import('@stripe/stripe-js');
-    return loadStripe(publishableKey);
-  }
-  return null;
+  tier?: number;
 }
 
 export default function ServiceCard({ 
@@ -31,7 +23,8 @@ export default function ServiceCard({
   calendlyUrl,
   serviceName,
   amount,
-  serviceDescription
+  serviceDescription,
+  tier
 }: ServiceCardProps) {
   
   const handleStripeCheckout = async () => {
@@ -48,19 +41,16 @@ export default function ServiceCard({
           email: 'customer@example.com'
         })
       });
+      
       const { sessionId } = await response.json();
       
       if (!sessionId) {
         throw new Error('No session ID received');
       }
       
-      const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-      if (stripe) {
-        const { error } = await stripe.redirectToCheckout({ sessionId });
-        if (error) {
-          throw error;
-        }
-      }
+      // Open Stripe checkout in new tab
+      const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
+      window.open(checkoutUrl, '_blank');
     } catch (error) {
       console.error('Stripe checkout error:', error);
       alert('Payment failed. Please try again.');
@@ -93,7 +83,7 @@ export default function ServiceCard({
               onClick={handleStripeCheckout}
               className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center"
             >
-              Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+              Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </button>
           )}
         </div>

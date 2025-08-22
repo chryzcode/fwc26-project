@@ -151,27 +151,29 @@ export default function Home() {
               calendlyUrl="https://calendly.com/fwc26info/30min"
             />
             
-            <ServiceCard
-              title="Monetization Blueprint"
-              description="Custom plan to maximize your revenue during the tournament with clear action steps."
-              features={["Pricing strategy", "Partnership opportunities", "Revenue streams"]}
-              backgroundImage="/Full-Monetization-Blueprint.jpg"
-              isFree={false}
-              serviceName="Monetization Blueprint"
-              amount={497}
-              serviceDescription="Custom plan to maximize your revenue during the tournament with clear action steps"
-            />
-            
-            <ServiceCard
-              title="Full-Service Launch"
-              description="End-to-end support to bring your FIFA 2026 business concept to life."
-              features={["Brand development", "Marketing execution", "Operational setup"]}
-              backgroundImage="/Business-Launch-Support.jpg"
-              isFree={false}
-              serviceName="Full-Service Launch"
-              amount={1997}
-              serviceDescription="End-to-end support to bring your FIFA 2026 business concept to life"
-            />
+                         <ServiceCard
+               title="Monetization Blueprint"
+               description="Custom plan to maximize your revenue during the tournament with clear action steps."
+               features={["Pricing strategy", "Partnership opportunities", "Revenue streams"]}
+               backgroundImage="/Full-Monetization-Blueprint.jpg"
+               isFree={false}
+               serviceName="Monetization Blueprint"
+               amount={497}
+               serviceDescription="Custom plan to maximize your revenue during the tournament with clear action steps"
+               tier={2}
+             />
+             
+             <ServiceCard
+               title="Full-Service Launch"
+               description="End-to-end support to bring your FIFA 2026 business concept to life."
+               features={["Brand development", "Marketing execution", "Operational setup"]}
+               backgroundImage="/Business-Launch-Support.jpg"
+               isFree={false}
+               serviceName="Full-Service Launch"
+               amount={1997}
+               serviceDescription="End-to-end support to bring your FIFA 2026 business concept to life"
+               tier={3}
+             />
           </div>
         </div>
       </section>

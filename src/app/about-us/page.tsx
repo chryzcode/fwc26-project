@@ -1,19 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
-import StripePayment from "@/components/StripePayment";
 
-export const metadata: Metadata = {
-  title: "About FIFA 2026 Business Consulting | FIFA World Cup 2026 Small Business Support",
-  description: "Learn about our FIFA 2026 business consulting services. Expert support for FIFA vendors Canada. FIFA 2026 small business support and monetization strategies.",
-  keywords: [
-    "FIFA 2026 business consulting",
-    "FIFA World Cup 2026 small business support",
-    "FIFA vendors Canada consulting",
-    "FIFA 2026 business strategy",
-    "FIFA 2026 vendor support services",
-  ],
-};
+
 
 export default function ServicesAboutUs() {
   return (
@@ -65,34 +54,80 @@ export default function ServicesAboutUs() {
               </div>
             </div>
           </li>
-          <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Full-Monetization-Blueprint.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Monetization Blueprint - Revenue optimization strategies">
-            <div className="absolute inset-0 bg-black/70" />
-            <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Monetization Blueprint</h3>
-              <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences.</p>
-              <div className="flex justify-center">
-                <StripePayment
-                  serviceName="Monetization Blueprint"
-                  amount={497}
-                  description="Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences"
-                />
+                      <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Full-Monetization-Blueprint.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Monetization Blueprint - Revenue optimization strategies">
+              <div className="absolute inset-0 bg-black/70" />
+              <div className="relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Monetization Blueprint</h3>
+                <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences.</p>
+                <div className="flex justify-center">
+                  <button 
+                    onClick={async () => {
+                      try {
+                        const response = await fetch('/api/create-checkout-session', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            serviceName: 'Monetization Blueprint',
+                            amount: 497,
+                            description: 'Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences',
+                            email: 'customer@example.com'
+                          })
+                        });
+                        
+                        const { sessionId } = await response.json();
+                        
+                        // Open Stripe checkout in new tab
+                        const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
+                        window.open(checkoutUrl, '_blank');
+                      } catch (error) {
+                        console.error('Payment error:', error);
+                        alert('Payment failed. Please try again.');
+                      }
+                    }}
+                    className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
+                  >
+                    Pay & Book Monetization Blueprint
+                  </button>
+                </div>
               </div>
-            </div>
-          </li>
-          <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Business-Launch-Support.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Full-Service Launch - End-to-end business support">
-            <div className="absolute inset-0 bg-black/70" />
-            <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Full-Service Launch</h3>
-              <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience.</p>
-              <div className="flex justify-center">
-                <StripePayment
-                  serviceName="Full-Service Launch"
-                  amount={1997}
-                  description="End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience"
-                />
+            </li>
+            <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Business-Launch-Support.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Full-Service Launch - End-to-end business support">
+              <div className="absolute inset-0 bg-black/70" />
+              <div className="relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Full-Service Launch</h3>
+                <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience.</p>
+                <div className="flex justify-center">
+                  <button 
+                    onClick={async () => {
+                      try {
+                        const response = await fetch('/api/create-checkout-session', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            serviceName: 'Full-Service Launch',
+                            amount: 1997,
+                            description: 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience',
+                            email: 'customer@example.com'
+                          })
+                        });
+                        
+                        const { sessionId } = await response.json();
+                        
+                        // Open Stripe checkout in new tab
+                        const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
+                        window.open(checkoutUrl, '_blank');
+                      } catch (error) {
+                        console.error('Payment error:', error);
+                        alert('Payment failed. Please try again.');
+                      }
+                    }}
+                    className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
+                  >
+                    Pay & Book Full-Service Launch
+                  </button>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
           {/* <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Booking-Section.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
             <div className="absolute inset-0 bg-black/70" />
             <div className="relative z-10">

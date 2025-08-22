@@ -71,7 +71,25 @@ export default function SuccessPage() {
             rel="noopener noreferrer"
             className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-200"
           >
-            Schedule Your Consultation Now
+            Schedule Strategy Session (Tier 1)
+          </a>
+          
+          <a
+            href="https://calendly.com/fwc26info/full-monetization-blueprint-tier-2?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all duration-200"
+            >
+            Schedule Monetization Blueprint (Tier 2)
+          </a>
+          
+          <a
+            href="https://calendly.com/fwc26info/business-launch-support-tier-3?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all duration-200"
+          >
+            Schedule Full-Service Launch (Tier 3)
           </a>
           
           <Link
