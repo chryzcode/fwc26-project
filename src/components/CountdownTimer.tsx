@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 
 export default function CountdownTimer() {
-  const kickoff = new Date("2026-06-11T00:00:00Z").getTime();
+  // FIFA 2026 kicks off on June 11, 2026 at 8:00 PM ET (Eastern Time)
+  // Converting to UTC: ET is UTC-4 during summer, so 8:00 PM ET = 12:00 AM UTC next day
+  const kickoff = new Date("2026-06-12T00:00:00Z").getTime();
   const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {

@@ -15,12 +15,12 @@ export default function FifaBusinessAdvantageBlog() {
         Are you ready to take your business to the next level and make the most out of the upcoming FIFA World Cup 2026 in Vancouver &amp; Toronto?
       </p>
 
-      <h2 className="text-2xl font-bold text-primary mb-4">What to Expect in This Session</h2>
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">What to Expect in This Session</h2>
               <p>
           In this 30–45 min consultation, we&apos;ll explore how your business or idea can profit from the FIFA World Cup 2026. Whether you&apos;re a local entrepreneur, small business owner, or creative professional, this session will help uncover opportunities tailored to your niche.
         </p>
 
-      <h2 className="text-2xl font-bold text-primary mb-4 mt-8">Meeting Agenda</h2>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">Meeting Agenda</h2>
       <ul className="space-y-3 text-gray-900">
         <li className="flex items-start gap-3">
           <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mt-0.5">1</span>
@@ -46,10 +46,10 @@ export default function FifaBusinessAdvantageBlog() {
 
       <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
         <h3 className="text-xl font-bold text-secondary mb-3">Why This Matters</h3>
-        <p className="font-medium text-primary">FWC26 Business strategy - Ebook</p>
+                    <p className="font-medium text-blue-600">FWC26 Business strategy - Ebook</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-primary mb-4">After the Session</h2>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">After the Session</h2>
       <p className="mb-4">
         You&apos;ll have the option to move into <strong>Tier 2</strong>, which includes:
       </p>

@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Modern color palette */
@@ -173,10 +175,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Enhanced CTA styling - Use these classes directly in HTML instead of @apply */
+/* 
+.cta-primary {
+  Use: bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
+}
+
+.cta-secondary {
+  Use: border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300
+}
+
+.hover-lift {
+  Use: transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
+}
+
+.hover-glow {
+  Use: transition-all duration-300 hover:shadow-lg hover:shadow-primary/25
+}
+*/
+
 Selection styles
 ::selection {
-  background: var(--primary-light);
-  color: var(--primary);
+  background: #dbeafe;
+  color: #2563eb;
 }
 
 ::-webkit-scrollbar {

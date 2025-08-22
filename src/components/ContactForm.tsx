@@ -167,7 +167,7 @@ export default function ContactForm() {
         <div className="flex items-center justify-center mt-6">
           <button
             type="submit"
-            className="px-8 py-3.5 border-2 border-primary rounded-xl bg-gradient-to-r from-primary to-accent text-primary font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg focus:outline-none w-fit"
+            className="px-8 py-3.5 border-2 border-blue-600 rounded-xl bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-lg focus:outline-none w-fit"
           >
             Send Message
           </button>

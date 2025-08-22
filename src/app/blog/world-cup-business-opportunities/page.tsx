@@ -12,7 +12,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
 
   return (
     <BlogPost post={post}>
-        <h2 className="text-2xl font-bold text-primary mb-4">INTRODUCTION</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4">INTRODUCTION</h2>
         <p className="text-gray-900">
           The FIFA World Cup 2026 is more than just a sporting event, it&apos;s a multi-billion dollar opportunity for entrepreneurs and small business owners. With matches taking place in Vancouver and Toronto, this global event will bring millions of fans, tourists, and media attention to Canada.
         </p>
@@ -23,7 +23,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           Let&apos;s turn your hustle into a winning game plan.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">1. Sell Themed Merchandise</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">1. Sell Themed Merchandise</h2>
         <p className="text-gray-900">
           Design and sell World Cup-inspired merch — think T-shirts, scarves, wristbands, tote bags, and flags.
         </p>
@@ -31,7 +31,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           <strong>Pro Tip:</strong> Focus on local pride (e.g., &quot;Toronto to the World&quot;, &quot;VanCity United&quot;) or fan humor. Use platforms like Shopify, Printful, or Etsy to launch quickly.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">2. Launch a Pop-Up Food Stall or Mobile Cart</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">2. Launch a Pop-Up Food Stall or Mobile Cart</h2>
         <p className="text-gray-900">
           Food trucks and pop-ups near match zones or viewing parties can bring in serious revenue.
         </p>
@@ -39,7 +39,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           <strong>Hot Ideas:</strong> Offer themed menu items (e.g., &quot;Messi Wrap,&quot; &quot;Vancouver Special Bowl&quot;), partner with bars, or join vendor fairs.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">3. Rent Out Your Space (Airbnb-Style)</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">3. Rent Out Your Space (Airbnb-Style)</h2>
         <p className="text-gray-900">
           Got a room, condo, or basement? Turn it into a short-term rental for traveling fans.
         </p>
@@ -47,7 +47,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           <strong>Pro Tip:</strong> Make your listing &quot;World Cup Ready&quot; with flags, snacks, and nearby transport info.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">4. Host Fan Watch Parties or Experiences</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">4. Host Fan Watch Parties or Experiences</h2>
         <p className="text-gray-900">
           Transform your backyard, café, or venue into a World Cup party zone.
         </p>
@@ -55,7 +55,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
           <strong>What to Offer:</strong> Big screen streaming, themed decor, drinks/snacks, tickets or packages. You can even partner with local DJs or vendors for add-ons.
         </p>
 
-        <h2 className="text-2xl font-bold text-primary mb-4 mt-8">5. Offer Creative Services to Local Businesses</h2>
+        <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-8">5. Offer Creative Services to Local Businesses</h2>
         <p className="text-gray-900">
           Are you a designer, photographer, or videographer? Help brands capitalize on the event with themed campaigns.
         </p>
@@ -64,7 +64,7 @@ export default function WorldCupBusinessOpportunitiesBlog() {
         </p>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
-          <h3 className="text-xl font-bold text-primary mb-3">Unlock Full Discovery: Request Free Ebook</h3>
+          <h3 className="text-xl font-bold text-blue-600 mb-3">Unlock Full Discovery: Request Free Ebook</h3>
           <p className="text-white mb-4">
             Email us at <strong>fwc26info@gmail.com</strong>
           </p>
@@ -72,11 +72,11 @@ export default function WorldCupBusinessOpportunitiesBlog() {
             <strong>Note:</strong> Please include your Business name, Location, and a brief bio about your business or idea. (Free e-books are sent out within 24 hrs)
           </p>
           <div className="bg-white p-4 rounded-lg border border-blue-200">
-            <h4 className="font-semibold text-primary mb-2">Download a free e-book template</h4>
+            <h4 className="font-semibold text-blue-600 mb-2">Download a free e-book template</h4>
             <Link href="/FWC26 Business strategy - Ebook.pdf" target="_blank" className="flex items-center gap-3 hover:bg-gray-50 p-2 rounded transition-colors">
               <Image src="/file.svg" alt="PDF File" width={32} height={40} className="w-8 h-10" />
               <div>
-                <p className="font-medium text-primary">FWC26 Business strategy - Ebook</p>
+                <p className="font-medium text-blue-600">FWC26 Business strategy - Ebook</p>
                 <p className="text-sm text-gray-600">Download PDF • 7.91MB</p>
               </div>
             </Link>
