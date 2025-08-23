@@ -12,24 +12,17 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('=== CHECKOUT SESSION API CALLED ===');
-    
     // Check if Stripe is properly configured
     if (!process.env.STRIPE_SECRET_KEY) {
-      console.error('❌ STRIPE_SECRET_KEY is not configured');
       return NextResponse.json(
         { error: 'Payment service not configured. Please contact support.' },
         { status: 500 }
       );
     }
-    
-    console.log('✅ Stripe secret key is configured');
 
     const { serviceName, amount, description, email } = await request.json();
-    console.log('📝 Request data received:', { serviceName, amount, description, email });
 
     if (!serviceName || !amount || !email) {
-      console.error('❌ Missing required fields:', { serviceName, amount, email });
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -38,16 +31,11 @@ export async function POST(request: NextRequest) {
 
     // Validate amount
     if (amount <= 0) {
-      console.error('❌ Invalid amount:', amount);
       return NextResponse.json(
         { error: 'Invalid amount' },
         { status: 400 }
       );
     }
-
-    console.log('🔄 Creating Stripe checkout session...');
-    console.log('💰 Amount in CAD:', amount);
-    console.log('💰 Amount in cents:', Math.round(amount * 100));
 
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
@@ -77,12 +65,6 @@ export async function POST(request: NextRequest) {
       // Removed shipping_address_collection to allow any country
     });
 
-    console.log('✅ Stripe session created successfully!');
-    console.log('🆔 Session ID:', session.id);
-    console.log('🔗 Session URL:', session.url);
-    console.log('💰 Amount:', session.amount_total);
-    console.log('💳 Payment status:', session.payment_status);
-
     return NextResponse.json(
       { 
         sessionId: session.id,
@@ -92,11 +74,8 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('❌ Stripe checkout error:', error);
-    
     // Provide more specific error messages
     if (error instanceof Stripe.errors.StripeError) {
-      console.error('🔴 Stripe specific error:', error.type, error.message);
       return NextResponse.json(
         { error: `Payment error: ${error.message}` },
         { status: 400 }

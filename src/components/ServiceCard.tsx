@@ -29,16 +29,10 @@ export default function ServiceCard({
   
   const handleStripeCheckout = async () => {
     if (!serviceName || !amount || !serviceDescription) {
-      console.log('❌ Missing required props:', { serviceName, amount, serviceDescription });
       return;
     }
     
-    console.log('🚀 Starting Stripe checkout process...');
-    console.log('📝 Service details:', { serviceName, amount, serviceDescription });
-    
     try {
-      console.log('📡 Making API call to /api/create-checkout-session...');
-      
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -50,35 +44,19 @@ export default function ServiceCard({
         })
       });
       
-      console.log('📡 API Response status:', response.status);
-      console.log('📡 API Response ok:', response.ok);
-      
       const responseData = await response.json();
-      console.log('📡 API Response data:', responseData);
       
       const { sessionId, sessionUrl } = responseData;
       
       if (!sessionId || !sessionUrl) {
-        console.error('❌ Missing session data in response:', responseData);
         throw new Error('Missing session data');
       }
       
-      console.log('✅ Session ID received:', sessionId);
-      console.log('✅ Session URL received:', sessionUrl);
-      
       // Open Stripe checkout using the provided session URL
-      console.log('🔗 Opening Stripe checkout URL:', sessionUrl);
-      
       window.open(sessionUrl, '_blank');
-      console.log('✅ Checkout window opened successfully');
       
     } catch (error) {
-      console.error('❌ Stripe checkout error:', error);
-      console.error('❌ Error details:', {
-        message: error.message,
-        stack: error.stack,
-        name: error.name
-      });
+      console.error('Stripe checkout error:', error);
       alert('Payment failed. Please try again.');
     }
   };

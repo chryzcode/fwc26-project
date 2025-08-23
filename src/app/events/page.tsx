@@ -133,13 +133,7 @@ export default function EventsPage() {
     setIsSubmitting(true);
     setSubmitMessage(null);
 
-    console.log('🚀 Starting waitlist submission process...');
-    console.log('📝 Form data:', formData);
-    console.log('⚽ Selected match:', selectedMatch);
-
     try {
-      console.log('📡 Making API call to /api/waitlist...');
-      
       const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
@@ -153,36 +147,21 @@ export default function EventsPage() {
         }),
       });
 
-      console.log('📡 API Response status:', response.status);
-      console.log('📡 API Response ok:', response.ok);
-
       const data = await response.json();
-      console.log('📡 API Response data:', data);
 
       if (response.ok) {
         // Use the session URL directly instead of redirectToCheckout
         if (data.sessionUrl) {
-          console.log('✅ Waitlist session created successfully');
-          console.log('🔗 Opening checkout URL:', data.sessionUrl);
-          
           // Open Stripe checkout in new tab using the provided session URL
           window.open(data.sessionUrl, '_blank');
-          console.log('✅ Checkout window opened successfully');
         } else {
-          console.error('❌ No session URL in response:', data);
           throw new Error('No checkout URL received');
         }
       } else {
-        console.error('❌ API error:', data.error);
         setSubmitMessage({ type: 'error', text: data.error || 'Failed to join waitlist' });
       }
     } catch (error: any) {
-      console.error('❌ Waitlist submission error:', error);
-      console.error('❌ Error details:', {
-        message: error.message,
-        stack: error.stack,
-        name: error.name
-      });
+      console.error('Waitlist submission error:', error);
       const errorMsg = error.message || 'Network error. Please try again.';
       setSubmitMessage({ type: 'error', text: errorMsg });
     } finally {

@@ -5,9 +5,6 @@ import Link from "next/link";
 export default function ServicesAboutUs() {
   const handleServicePayment = async (serviceName: string, amount: number, description: string) => {
     try {
-      console.log('🚀 Starting service payment for:', serviceName);
-      console.log('💰 Amount:', amount, 'CAD');
-      
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -19,24 +16,16 @@ export default function ServicesAboutUs() {
         })
       });
       
-      console.log('📡 API Response status:', response.status);
-      
       const data = await response.json();
-      console.log('📡 API Response data:', data);
       
       if (response.ok && data.sessionUrl) {
-        console.log('✅ Service session created successfully');
-        console.log('🔗 Opening checkout URL:', data.sessionUrl);
-        
         // Open Stripe checkout using the provided session URL
         window.open(data.sessionUrl, '_blank');
-        console.log('✅ Checkout window opened successfully');
       } else {
-        console.error('❌ API error or missing session URL:', data);
         throw new Error(data.error || 'Failed to create payment session');
       }
     } catch (error) {
-      console.error('❌ Service payment error:', error);
+      console.error('Service payment error:', error);
       alert('Payment failed. Please try again.');
     }
   };
