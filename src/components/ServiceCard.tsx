@@ -28,7 +28,9 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   
   const handleStripeCheckout = async () => {
-    if (!serviceName || !amount || !serviceDescription) return;
+    if (!serviceName || !amount || !serviceDescription) {
+      return;
+    }
     
     try {
       const response = await fetch('/api/create-checkout-session', {
@@ -42,15 +44,17 @@ export default function ServiceCard({
         })
       });
       
-      const { sessionId } = await response.json();
+      const responseData = await response.json();
       
-      if (!sessionId) {
-        throw new Error('No session ID received');
+      const { sessionId, sessionUrl } = responseData;
+      
+      if (!sessionId || !sessionUrl) {
+        throw new Error('Missing session data');
       }
       
-      // Open Stripe checkout in new tab
-      const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
-      window.open(checkoutUrl, '_blank');
+      // Open Stripe checkout using the provided session URL
+      window.open(sessionUrl, '_blank');
+      
     } catch (error) {
       console.error('Stripe checkout error:', error);
       alert('Payment failed. Please try again.');

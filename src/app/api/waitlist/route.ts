@@ -20,24 +20,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { serviceName, amount, description, email } = await request.json();
+    const { name, email, matchId, matchDetails } = await request.json();
 
-    if (!serviceName || !amount || !email) {
+    if (!name || !email || !matchId) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
-    // Validate amount
-    if (amount <= 0) {
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: 'Invalid amount' },
+        { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
-    // Create Stripe checkout session
+    // Create Stripe checkout session for waitlist deposit
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -45,21 +46,23 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: 'cad',
             product_data: {
-              name: serviceName,
-              description: description,
+              name: 'FIFA 2026 Waitlist Deposit',
+              description: `Waitlist deposit for: ${matchDetails}`,
             },
-            unit_amount: Math.round(amount * 100), // Convert to cents and ensure it's an integer
+            unit_amount: 999, // $9.99 CAD in cents
           },
           quantity: 1,
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/book`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/success?session_id={CHECKOUT_SESSION_ID}&type=waitlist`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/events`,
       customer_email: email,
       metadata: {
-        serviceName,
-        description,
+        type: 'waitlist_deposit',
+        matchId: matchId.toString(),
+        matchDetails,
+        customerName: name,
       },
       billing_address_collection: 'required',
       // Removed shipping_address_collection to allow any country
@@ -67,8 +70,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { 
+        success: true, 
         sessionId: session.id,
-        sessionUrl: session.url 
+        sessionUrl: session.url,
+        message: 'Redirecting to payment...'
       },
       { status: 200 }
     );
@@ -83,7 +88,7 @@ export async function POST(request: NextRequest) {
     }
     
     return NextResponse.json(
-      { error: 'Failed to create checkout session. Please try again.' },
+      { error: 'Failed to create waitlist session. Please try again.' },
       { status: 500 }
     );
   }
