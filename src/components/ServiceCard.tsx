@@ -28,9 +28,17 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   
   const handleStripeCheckout = async () => {
-    if (!serviceName || !amount || !serviceDescription) return;
+    if (!serviceName || !amount || !serviceDescription) {
+      console.log('❌ Missing required props:', { serviceName, amount, serviceDescription });
+      return;
+    }
+    
+    console.log('🚀 Starting Stripe checkout process...');
+    console.log('📝 Service details:', { serviceName, amount, serviceDescription });
     
     try {
+      console.log('📡 Making API call to /api/create-checkout-session...');
+      
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,17 +50,35 @@ export default function ServiceCard({
         })
       });
       
-      const { sessionId } = await response.json();
+      console.log('📡 API Response status:', response.status);
+      console.log('📡 API Response ok:', response.ok);
       
-      if (!sessionId) {
-        throw new Error('No session ID received');
+      const responseData = await response.json();
+      console.log('📡 API Response data:', responseData);
+      
+      const { sessionId, sessionUrl } = responseData;
+      
+      if (!sessionId || !sessionUrl) {
+        console.error('❌ Missing session data in response:', responseData);
+        throw new Error('Missing session data');
       }
       
-      // Open Stripe checkout in new tab
-      const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
-      window.open(checkoutUrl, '_blank');
+      console.log('✅ Session ID received:', sessionId);
+      console.log('✅ Session URL received:', sessionUrl);
+      
+      // Open Stripe checkout using the provided session URL
+      console.log('🔗 Opening Stripe checkout URL:', sessionUrl);
+      
+      window.open(sessionUrl, '_blank');
+      console.log('✅ Checkout window opened successfully');
+      
     } catch (error) {
-      console.error('Stripe checkout error:', error);
+      console.error('❌ Stripe checkout error:', error);
+      console.error('❌ Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
       alert('Payment failed. Please try again.');
     }
   };
