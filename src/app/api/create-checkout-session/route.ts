@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { serviceName, amount, description, email } = await request.json();
+    const { serviceName, amount, description, email, tier, calendlyUrl } = await request.json();
 
     if (!serviceName || !amount || !email) {
       return NextResponse.json(
@@ -54,12 +54,14 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: calendlyUrl || 'https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026',
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/book`,
       customer_email: email,
       metadata: {
         serviceName,
         description,
+        tier: tier?.toString() || '1',
+        calendlyUrl: calendlyUrl || 'https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026',
       },
       billing_address_collection: 'required',
       // Removed shipping_address_collection to allow any country

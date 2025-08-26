@@ -69,6 +69,9 @@ A comprehensive business consulting platform designed to help entrepreneurs and 
    # Base URL
    NEXT_PUBLIC_BASE_URL=http://localhost:3000
    
+   # Crisp Chat Widget
+   NEXT_PUBLIC_CRISP_WEBSITE_ID=26631aca-283a-47db-876b-5d803e778082
+   
    # Google Verification (optional)
    GOOGLE_VERIFICATION_CODE=your_verification_code
    ```

@@ -27,6 +27,17 @@ export default function ServiceCard({
   tier
 }: ServiceCardProps) {
   
+  const getCalendlyUrlForTier = (tier?: number): string => {
+    switch (tier) {
+      case 2:
+        return "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
+      case 3:
+        return "https://calendly.com/fwc26info/business-launch-support-tier-3";
+      default:
+        return "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
+    }
+  };
+  
   const handleStripeCheckout = async () => {
     if (!serviceName || !amount || !serviceDescription) {
       return;
@@ -40,7 +51,9 @@ export default function ServiceCard({
           serviceName,
           amount,
           description: serviceDescription,
-          email: 'customer@example.com'
+          email: 'customer@example.com',
+          tier,
+          calendlyUrl: getCalendlyUrlForTier(tier)
         })
       });
       
