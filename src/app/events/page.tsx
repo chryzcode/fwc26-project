@@ -17,6 +17,7 @@ type Match = {
 };
 
 const matches: Match[] = [
+  // Vancouver Matches
   // Group Stage Matches
   {
     id: 1,
@@ -111,6 +112,88 @@ const matches: Match[] = [
     flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
     flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
   },
+
+  // Toronto Matches
+  // Group Stage Matches
+  {
+    id: 8,
+    city: 'Toronto',
+    date: '2026-06-12',
+    time: 'TBA',
+    teams: ['Canada', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 3,
+    flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
+    flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
+  },
+  {
+    id: 9,
+    city: 'Toronto',
+    date: '2026-06-17',
+    time: 'TBA',
+    teams: ['TBD', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 21,
+    flag1: '/blog-image/fans-into-client.avif', // Placeholder
+    flag2: '/blog-image/fifa-businness advantage.avif', // Placeholder
+  },
+  {
+    id: 10,
+    city: 'Toronto',
+    date: '2026-06-20',
+    time: 'TBA',
+    teams: ['TBD', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 33,
+    flag1: '/blog-image/10-ways-to-make.avif', // Placeholder
+    flag2: '/blog-image/fans-into-client.avif', // Placeholder
+  },
+  {
+    id: 11,
+    city: 'Toronto',
+    date: '2026-06-23',
+    time: 'TBA',
+    teams: ['TBD', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 46,
+    flag1: '/blog-image/fifa-businness advantage.avif', // Placeholder
+    flag2: '/blog-image/10-ways-to-make.avif', // Placeholder
+  },
+  {
+    id: 12,
+    city: 'Toronto',
+    date: '2026-06-26',
+    time: 'TBA',
+    teams: ['TBD', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Group Stage',
+    matchDay: 62,
+    flag1: '/blog-image/fans-into-client.avif', // Placeholder
+    flag2: '/blog-image/fifa-businness advantage.avif', // Placeholder
+  },
+  // Round of 32
+  {
+    id: 13,
+    city: 'Toronto',
+    date: '2026-07-02',
+    time: 'TBA',
+    teams: ['TBD', 'TBD'],
+    venue: 'Toronto Stadium at Exhibition Place',
+    status: 'Waitlist Open',
+    stage: 'Round of 32',
+    matchDay: 83,
+    flag1: '/blog-image/10-ways-to-make.avif', // Placeholder
+    flag2: '/blog-image/fifa-businness advantage.avif', // Placeholder
+  },
 ];
 
 export default function EventsPage() {
@@ -182,8 +265,8 @@ export default function EventsPage() {
       <section className="relative min-h-[50vh] flex flex-col items-center justify-center text-center overflow-hidden" style={{backgroundImage: 'url(/Commercial-Opportunity.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="relative z-10 py-20 px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Can't Find FIFA 2026 Tickets? Get on the List!</h1>
-          <p className="text-lg text-white mb-8 max-w-2xl mx-auto py-5">Join the waitlist, and we'll source ticket availability for you.</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">FIFA 2026 Tickets - Vancouver & Toronto</h1>
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto py-5">Join the waitlist for matches in Vancouver and Toronto. We'll source ticket availability for you.</p>
           <a href="#matches" className="inline-block px-8 py-4 rounded-xl text-white font-bold text-lg shadow-lg hover:bg-accent transition hover:scale-110">Browse Matches & Join Waitlist</a>
         </div>
       </section>
@@ -191,11 +274,24 @@ export default function EventsPage() {
       {/* Match Listings & Filters */}
       <section id="matches" className="py-16 bg-white">
         <div className="container mx-auto px-4">
+          {/* Match Summary */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Match Schedule</h2>
+            <p className="text-lg text-gray-600 mb-6">
+              <span className="font-semibold text-blue-600">{matches.filter(m => m.city === 'Vancouver').length}</span> matches in Vancouver • 
+              <span className="font-semibold text-blue-600"> {matches.filter(m => m.city === 'Toronto').length}</span> matches in Toronto
+            </p>
+            <div className="flex justify-center gap-4 text-sm text-gray-500">
+              <span>📅 June 12 - July 7, 2026</span>
+              <span>🏟️ BC Place & Exhibition Place</span>
+            </div>
+          </div>
           <div className="flex flex-wrap gap-4 mb-8 justify-center">
             <div className="relative">
               <select className="px-4 py-2 pr-8 min-w-[160px] rounded border appearance-none" value={filter.city} onChange={e => setFilter(f => ({...f, city: e.target.value}))}>
                 <option value="">All Cities</option>
                 <option value="Vancouver">Vancouver</option>
+                <option value="Toronto">Toronto</option>
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -207,6 +303,7 @@ export default function EventsPage() {
                 <option value="">All Teams</option>
                 <option value="Canada">Canada</option>
                 <option value="TBA">TBA</option>
+                <option value="TBD">TBD</option>
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -381,7 +478,7 @@ export default function EventsPage() {
               <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center text-sm font-bold mb-4">2</div>
               <h3 className="font-bold text-lg mb-2">We Search for You</h3>
               <ul className="text-slate-600 text-sm mb-2">
-                <li>We source tickets from verified resellers or official channels</li>
+                <li>We source tickets from verified resellers or official channels for both Vancouver and Toronto matches</li>
               </ul>
             </div>
             <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center text-center">
