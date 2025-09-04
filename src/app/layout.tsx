@@ -4,7 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ContactForm from "@/components/ContactForm";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import LiveChatWidget from "@/components/LiveChatWidget";
+import HybridChatWidget from "@/components/HybridChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,12 +70,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Crisp Chat Widget - Loaded by HybridChatWidget component */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];
+              window.CRISP_WEBSITE_ID="${process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID || '26631aca-283a-47db-876b-5d803e778082'}";
+              (function(){
+                d=document;
+                s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";
+                s.async=1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} antialiased bg-white text-blue-900`}
       >
         <NavBar />
         {children}
-        <LiveChatWidget />
+        <HybridChatWidget />
         <footer className="mt-16 bg-white text-blue-900 px-4 py-12 border-t border-blue-100 shadow-inner">
   <div id="contact" className="max-w-3xl mx-auto flex flex-col gap-12 items-center text-center">
     <div className="w-full flex flex-col items-center">

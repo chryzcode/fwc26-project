@@ -3,6 +3,9 @@ import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+// Force dynamic rendering to prevent build-time prerendering
+export const dynamic = 'force-dynamic';
+
 function SuccessPageContent() {
   const searchParams = useSearchParams();
   const [paymentType, setPaymentType] = useState<'consultation' | 'waitlist'>('consultation');

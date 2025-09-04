@@ -3,8 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ServicesAboutUs() {
-  const handleServicePayment = async (serviceName: string, amount: number, description: string) => {
+  const handleServicePayment = async (serviceName: string, amount: number, description: string, tier?: number) => {
     try {
+      const getCalendlyUrlForTier = (tier?: number): string => {
+        switch (tier) {
+          case 2:
+            return "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
+          case 3:
+            return "https://calendly.com/fwc26info/business-launch-support-tier-3";
+          default:
+            return "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
+        }
+      };
+
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -12,7 +23,9 @@ export default function ServicesAboutUs() {
           serviceName,
           amount,
           description,
-          email: 'customer@example.com'
+          email: 'customer@example.com',
+          tier,
+          calendlyUrl: getCalendlyUrlForTier(tier)
         })
       });
       
@@ -74,7 +87,7 @@ export default function ServicesAboutUs() {
               <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences.</p>
               <div className="flex justify-center">
                 <button 
-                  onClick={() => handleServicePayment('Monetization Blueprint', 497, 'Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences')}
+                  onClick={() => handleServicePayment('Monetization Blueprint', 497, 'Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences', 2)}
                   className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
                 >
                   Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -89,7 +102,7 @@ export default function ServicesAboutUs() {
               <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience.</p>
               <div className="flex justify-center">
                 <button 
-                  onClick={() => handleServicePayment('Full-Service Launch', 1997, 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience')}
+                  onClick={() => handleServicePayment('Full-Service Launch', 1997, 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience', 3)}
                   className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
                 >
                   Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>

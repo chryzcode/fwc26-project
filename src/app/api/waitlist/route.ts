@@ -10,6 +10,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2023-10-16',
 });
 
+
+
 export async function POST(request: NextRequest) {
   try {
     // Check if Stripe is properly configured
@@ -55,7 +57,7 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/success?session_id={CHECKOUT_SESSION_ID}&type=waitlist`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/waitlist-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/events`,
       customer_email: email,
       metadata: {
@@ -77,7 +79,6 @@ export async function POST(request: NextRequest) {
       },
       { status: 200 }
     );
-
   } catch (error) {
     // Provide more specific error messages
     if (error instanceof Stripe.errors.StripeError) {
