@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: calendlyUrl || 'https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026',
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://fwc26-project.vercel.app'}/book`,
       customer_email: email,
       metadata: {

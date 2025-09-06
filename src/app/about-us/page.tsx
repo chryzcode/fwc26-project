@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ServicesAboutUs() {
-  const handleServicePayment = async (serviceName: string, amount: number, description: string, tier?: number) => {
+  const handleBookAndPay = (serviceName: string, amount: number, description: string, tier?: number) => {
     try {
       const getCalendlyUrlForTier = (tier?: number): string => {
         switch (tier) {
@@ -16,30 +16,24 @@ export default function ServicesAboutUs() {
         }
       };
 
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          serviceName,
-          amount,
-          description,
-          email: 'customer@example.com',
-          tier,
-          calendlyUrl: getCalendlyUrlForTier(tier)
-        })
-      });
+      const calendlyUrl = getCalendlyUrlForTier(tier);
       
-      const data = await response.json();
-      
-      if (response.ok && data.sessionUrl) {
-        // Open Stripe checkout using the provided session URL
-        window.open(data.sessionUrl, '_blank');
-      } else {
-        throw new Error(data.error || 'Failed to create payment session');
+      // For Tier 2 and 3, Calendly already handles payment, so just redirect to Calendly
+      if (tier === 2 || tier === 3) {
+        window.open(calendlyUrl, '_blank');
+        return;
       }
+      
+      // For Tier 1 (free service), use our custom redirect logic
+      const paymentUrl = `/book?service=${encodeURIComponent(serviceName)}&amount=${amount}&description=${encodeURIComponent(description)}&tier=${tier || 1}`;
+      const separator = calendlyUrl.includes('?') ? '&' : '?';
+      const calendlyWithRedirect = `${calendlyUrl}${separator}redirect_uri=${encodeURIComponent(window.location.origin + paymentUrl)}`;
+      
+      // Open Calendly first
+      window.open(calendlyWithRedirect, '_blank');
     } catch (error) {
-      console.error('Service payment error:', error);
-      alert('Payment failed. Please try again.');
+      console.error('Booking error:', error);
+      alert('Failed to open booking. Please try again.');
     }
   };
 
@@ -87,10 +81,10 @@ export default function ServicesAboutUs() {
               <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences.</p>
               <div className="flex justify-center">
                 <button 
-                  onClick={() => handleServicePayment('Monetization Blueprint', 497, 'Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences', 2)}
+                  onClick={() => handleBookAndPay('Monetization Blueprint', 497, 'Actionable roadmaps for maximizing revenue from fan engagement, merchandising, and digital experiences', 2)}
                   className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
                 >
-                  Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                  Book & Pay<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </button>
               </div>
             </div>
@@ -102,10 +96,10 @@ export default function ServicesAboutUs() {
               <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience.</p>
               <div className="flex justify-center">
                 <button 
-                  onClick={() => handleServicePayment('Full-Service Launch', 1997, 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience', 3)}
+                  onClick={() => handleBookAndPay('Full-Service Launch', 1997, 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience', 3)}
                   className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
                 >
-                  Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                  Book & Pay<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </button>
               </div>
             </div>

@@ -38,40 +38,26 @@ export default function ServiceCard({
     }
   };
   
-  const handleStripeCheckout = async () => {
+  const handleBookAndPay = () => {
     if (!serviceName || !amount || !serviceDescription) {
       return;
     }
     
-    try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          serviceName,
-          amount,
-          description: serviceDescription,
-          email: 'customer@example.com',
-          tier,
-          calendlyUrl: getCalendlyUrlForTier(tier)
-        })
-      });
-      
-      const responseData = await response.json();
-      
-      const { sessionId, sessionUrl } = responseData;
-      
-      if (!sessionId || !sessionUrl) {
-        throw new Error('Missing session data');
-      }
-      
-      // Open Stripe checkout using the provided session URL
-      window.open(sessionUrl, '_blank');
-      
-    } catch (error) {
-      console.error('Stripe checkout error:', error);
-      alert('Payment failed. Please try again.');
+    const calendlyUrl = getCalendlyUrlForTier(tier);
+    
+    // For Tier 2 and 3, Calendly already handles payment, so just redirect to Calendly
+    if (tier === 2 || tier === 3) {
+      window.open(calendlyUrl, '_blank');
+      return;
     }
+    
+    // For Tier 1 (free service), use our custom redirect logic
+    const paymentUrl = `/book?service=${encodeURIComponent(serviceName)}&amount=${amount}&description=${encodeURIComponent(serviceDescription)}&tier=${tier || 1}`;
+    const separator = calendlyUrl.includes('?') ? '&' : '?';
+    const calendlyWithRedirect = `${calendlyUrl}${separator}redirect_uri=${encodeURIComponent(window.location.origin + paymentUrl)}`;
+    
+    // Open Calendly first
+    window.open(calendlyWithRedirect, '_blank');
   };
 
   return (
@@ -97,10 +83,10 @@ export default function ServiceCard({
             </a>
           ) : (
             <button 
-              onClick={handleStripeCheckout}
+              onClick={handleBookAndPay}
               className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center"
             >
-              Pay & Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+              Book & Pay<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </button>
           )}
         </div>
