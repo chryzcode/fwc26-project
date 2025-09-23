@@ -278,8 +278,6 @@ export default function EventsPage() {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Match Schedule</h2>
             <p className="text-lg text-gray-600 mb-6">
-              <span className="font-semibold text-blue-600">{matches.filter(m => m.city === 'Vancouver').length}</span> matches in Vancouver • 
-              <span className="font-semibold text-blue-600"> {matches.filter(m => m.city === 'Toronto').length}</span> matches in Toronto
             </p>
             <div className="flex justify-center gap-4 text-sm text-gray-500">
               <span>📅 June 12 - July 7, 2026</span>

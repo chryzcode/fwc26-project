@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email
     try {
-      const { subject, htmlContent } = generateWaitlistConfirmationEmail({
+      const { subject, html_content, text_content } = generateWaitlistConfirmationEmail({
         name: waitlistEntry.name,
         email: waitlistEntry.email,
         matchDetails: waitlistEntry.matchDetails,
@@ -84,7 +84,12 @@ export async function POST(request: NextRequest) {
         to_email: waitlistEntry.email,
         to_name: waitlistEntry.name,
         subject,
-        html_content: htmlContent,
+        html_content,
+        text_content,
+        options: {
+          async: false, // Immediate sending for waitlist confirmations
+          ipPool: 'Main Pool' // Use main pool for transactional emails
+        }
       });
 
       // Mark email as sent
