@@ -1,5 +1,4 @@
 import mailchimp from '@mailchimp/mailchimp_transactional';
-import type { MessagesSendResponse } from '@mailchimp/mailchimp_transactional';
 
 interface EmailData {
   to_email: string;
@@ -81,14 +80,24 @@ export async function sendTransactionalEmail(emailData: EmailData) {
     if (Array.isArray(response) && response.length > 0) {
       const [result] = response;
       if (result.status !== 'sent' && result.status !== 'queued') {
-        throw new Error(`Mandrill failed: ${result.reject_reason || 'unknown error'}`);
+        // Log the rejection but don't fail the request
+        console.warn(`Mandrill email rejected: ${result.reject_reason || 'unknown error'}`);
+        console.warn(`Email to ${result.email} was not delivered`);
+
+        // Return the rejection info but don't throw an error
+        return {
+          ...response,
+          deliveryStatus: 'rejected',
+          rejectionReason: result.reject_reason || 'unknown error'
+        };
       }
       
       // Log detailed response for debugging
       response.forEach((result: any) => {
-        console.log(`Email to ${result.email}: ${result.status}`);
-        if (result.reject_reason) {
-          console.warn(`Rejection reason: ${result.reject_reason}`);
+        if (result.status === 'sent' || result.status === 'queued') {
+          console.log(`Email to ${result.email}: ${result.status}`);
+        } else {
+          console.warn(`Email to ${result.email} was ${result.status}: ${result.reject_reason}`);
         }
       });
     }
@@ -135,7 +144,7 @@ Consider booking a FIFA 2026 Business Strategy Session to maximize your opportun
 Book at: https://calendly.com/fwc26info/30min
 
 Need Help?
-If you have any questions about your waitlist status, please contact us at info@fwc26.ca
+If you have any questions about your waitlist status, please contact us at support@fwc26.ca
 
 FWC 2026 Business Advantage
 Your partner in FIFA 2026 business success`;
@@ -198,7 +207,7 @@ Your partner in FIFA 2026 business success`;
           </div>
           
           <h3>📧 Need Help?</h3>
-          <p>If you have any questions about your waitlist status, please contact us at <a href="mailto:info@fwc26.ca">info@fwc26.ca</a></p>
+          <p>If you have any questions about your waitlist status, please contact us at <a href="mailto:support@fwc26.ca">support@fwc26.ca</a></p>
           
           <div class="footer">
             <p>FWC 2026 Business Advantage</p>
