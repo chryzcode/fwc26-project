@@ -74,6 +74,11 @@ A comprehensive business consulting platform designed to help entrepreneurs and 
    # Crisp Chat Widget
    NEXT_PUBLIC_CRISP_WEBSITE_ID=26631aca-283a-47db-876b-5d803e778082
    
+   # Calendly URLs (Optional - defaults provided)
+   NEXT_PUBLIC_CALENDLY_TIER1_URL=https://calendly.com/fwc26info/30min
+   NEXT_PUBLIC_CALENDLY_TIER2_URL=https://calendly.com/fwc26info/full-monetization-blueprint-tier-2
+   NEXT_PUBLIC_CALENDLY_TIER3_URL=https://calendly.com/fwc26info/business-launch-support-tier-3
+   
    # MongoDB Database
    MONGODB_URI=mongodb://localhost:27017/fwc26
    

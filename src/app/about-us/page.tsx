@@ -8,11 +8,11 @@ export default function ServicesAboutUs() {
       const getCalendlyUrlForTier = (tier?: number): string => {
         switch (tier) {
           case 2:
-            return "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
+            return process.env.NEXT_PUBLIC_CALENDLY_TIER2_URL || "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
           case 3:
-            return "https://calendly.com/fwc26info/business-launch-support-tier-3";
+            return process.env.NEXT_PUBLIC_CALENDLY_TIER3_URL || "https://calendly.com/fwc26info/business-launch-support-tier-3";
           default:
-            return "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
+            return process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
         }
       };
 
@@ -68,7 +68,7 @@ export default function ServicesAboutUs() {
               <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Strategy Sessions</h3>
               <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Personalized consultations to identify your business&apos;s World Cup opportunities and craft a winning plan.</p>
               <div className="flex justify-center">
-                <a href="https://calendly.com/fwc26info/30min" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30">
+                <a href={`${process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || 'https://calendly.com/fwc26info/30min'}`} target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30">
                   Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </a>
               </div>

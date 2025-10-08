@@ -30,34 +30,24 @@ export default function ServiceCard({
   const getCalendlyUrlForTier = (tier?: number): string => {
     switch (tier) {
       case 2:
-        return "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER2_URL || "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
       case 3:
-        return "https://calendly.com/fwc26info/business-launch-support-tier-3";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER3_URL || "https://calendly.com/fwc26info/business-launch-support-tier-3";
       default:
-        return "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
     }
   };
   
   const handleBookAndPay = () => {
-    if (!serviceName || !amount || !serviceDescription) {
-      return;
+    // Redirect to /book page with appropriate service parameter
+    if (tier === 2) {
+      window.location.href = '/book?service=tier2';
+    } else if (tier === 3) {
+      window.location.href = '/book?service=tier3';
+    } else {
+      // Default to tier 1
+      window.location.href = '/book';
     }
-    
-    const calendlyUrl = getCalendlyUrlForTier(tier);
-    
-    // For Tier 2 and 3, Calendly already handles payment, so just redirect to Calendly
-    if (tier === 2 || tier === 3) {
-      window.open(calendlyUrl, '_blank');
-      return;
-    }
-    
-    // For Tier 1 (free service), use our custom redirect logic
-    const paymentUrl = `/book?service=${encodeURIComponent(serviceName)}&amount=${amount}&description=${encodeURIComponent(serviceDescription)}&tier=${tier || 1}`;
-    const separator = calendlyUrl.includes('?') ? '&' : '?';
-    const calendlyWithRedirect = `${calendlyUrl}${separator}redirect_uri=${encodeURIComponent(window.location.origin + paymentUrl)}`;
-    
-    // Open Calendly first
-    window.open(calendlyWithRedirect, '_blank');
   };
 
   return (
@@ -73,14 +63,12 @@ export default function ServiceCard({
         </ul>
         <div className="mt-auto pt-4 w-full flex justify-center">
           {isFree ? (
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => window.location.href = '/book'}
               className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center"
             >
               Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-            </a>
+            </button>
           ) : (
             <button 
               onClick={handleBookAndPay}
