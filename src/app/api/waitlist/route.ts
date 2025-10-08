@@ -22,9 +22,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, matchId, matchDetails } = await request.json();
+    const { name, email, quantity, matchId, matchDetails } = await request.json();
 
-    if (!name || !email || !matchId) {
+    if (!name || !email || !matchId || !quantity) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
             },
             unit_amount: 999, // $9.99 CAD in cents
           },
-          quantity: 1,
+          quantity: quantity,
         },
       ],
       mode: 'payment',
@@ -65,6 +65,7 @@ export async function POST(request: NextRequest) {
         matchId: matchId.toString(),
         matchDetails,
         customerName: name,
+        quantity: quantity.toString(),
       },
       billing_address_collection: 'required',
       // Removed shipping_address_collection to allow any country

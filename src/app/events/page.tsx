@@ -200,7 +200,7 @@ export default function EventsPage() {
   const [filter, setFilter] = useState({ city: '', date: '', team: '', stage: '' });
   const [showModal, setShowModal] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', quantity: 1 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
@@ -225,6 +225,7 @@ export default function EventsPage() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          quantity: formData.quantity,
           matchId: selectedMatch?.id,
           matchDetails: selectedMatch ? `${selectedMatch.teams[0]} vs ${selectedMatch.teams[1]} (${selectedMatch.city}, ${selectedMatch.date})` : '',
         }),
@@ -254,7 +255,7 @@ export default function EventsPage() {
 
   const openWaitlistModal = (match: Match) => {
     setSelectedMatch(match);
-    setFormData({ name: '', email: '' });
+    setFormData({ name: '', email: '', quantity: 1 });
     setSubmitMessage(null);
     setShowModal(true);
   };
@@ -436,10 +437,32 @@ export default function EventsPage() {
                 />
               </div>
 
+              <div>
+                <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-2">
+                  Number of Tickets *
+                </label>
+                <select 
+                  id="quantity"
+                  required 
+                  className="w-full px-4 py-2 rounded border focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  value={formData.quantity}
+                  onChange={(e) => setFormData(prev => ({ ...prev, quantity: parseInt(e.target.value) }))}
+                >
+                  <option value={1}>1 ticket</option>
+                  <option value={2}>2 tickets</option>
+                  <option value={3}>3 tickets</option>
+                  <option value={4}>4 tickets</option>
+                  <option value={5}>5 tickets</option>
+                  <option value={6}>6 tickets</option>
+                  <option value={7}>7 tickets</option>
+                  <option value={8}>8 tickets</option>
+                </select>
+              </div>
+
               <div className="text-xs text-slate-600 bg-yellow-50 p-3 rounded border border-yellow-200">
                 <p className="font-medium mb-1">Important Information:</p>
                 <ul className="space-y-1">
-                  <li>• $9.99 CAD deposit is required to join the waitlist</li>
+                  <li>• ${(9.99 * formData.quantity).toFixed(2)} CAD deposit is required to join the waitlist ({formData.quantity} ticket{formData.quantity > 1 ? 's' : ''} × $9.99 each)</li>
                   <li>• Deposit is non-refundable and secures your spot</li>
                   <li>• You'll be notified when tickets become available</li>
                   <li>• No obligation to purchase when notified</li>
@@ -451,7 +474,7 @@ export default function EventsPage() {
                 disabled={isSubmitting}
                 className="w-full py-3 rounded-lg bg-blue-600 text-white font-bold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Processing...' : 'Pay $9.99 CAD & Join Waitlist'}
+                {isSubmitting ? 'Processing...' : `Pay $${(9.99 * formData.quantity).toFixed(2)} CAD & Join Waitlist`}
               </button>
             </form>
           </div>

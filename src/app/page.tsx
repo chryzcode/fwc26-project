@@ -71,7 +71,7 @@ export default function Home() {
         
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-in animation-delay-300">
               <a href="/blog" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[200px] text-center">Discover Opportunities</a>
-              <Link href="/book" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 min-w-[200px] text-center">Book Strategy Call</Link>
+              <Link href="/book" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 min-w-[200px] text-center">Book Free Discovery</Link>
             </div>
           </div>
         </div>
@@ -152,26 +152,26 @@ export default function Home() {
             />
             
                          <ServiceCard
-               title="Monetization Blueprint"
-               description="Custom plan to maximize your revenue during the tournament with clear action steps."
-               features={["Pricing strategy", "Partnership opportunities", "Revenue streams"]}
+               title="Business Development Support (Tier 2)"
+               description="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth."
+               features={["4 weeks / 4 sessions", "2 hours per session", "3 follow-up sessions", "Pricing strategy", "Partnership opportunities", "Revenue streams"]}
                backgroundImage="/Full-Monetization-Blueprint.jpg"
                isFree={false}
-               serviceName="Monetization Blueprint"
-               amount={497}
-               serviceDescription="Custom plan to maximize your revenue during the tournament with clear action steps"
+               serviceName="Business Development Support (Tier 2)"
+               amount={1299}
+               serviceDescription="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth"
                tier={2}
              />
              
              <ServiceCard
-               title="Full-Service Launch"
-               description="End-to-end support to bring your FIFA 2026 business concept to life."
-               features={["Brand development", "Marketing execution", "Operational setup"]}
+               title="Business Launch Support (Tier 3)"
+               description="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
+               features={["8 weeks / 8 sessions", "2 hours per session", "Brand development", "Marketing execution", "Operational setup", "Full launch support"]}
                backgroundImage="/Business-Launch-Support.jpg"
                isFree={false}
-               serviceName="Full-Service Launch"
-               amount={1997}
-               serviceDescription="End-to-end support to bring your FIFA 2026 business concept to life"
+               serviceName="Business Launch Support (Tier 3)"
+               amount={3999}
+               serviceDescription="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
                tier={3}
              />
           </div>
@@ -187,48 +187,45 @@ export default function Home() {
             <p className="text-lg text-secondary max-w-2xl mx-auto text-center">Don't just take our word for it. Here's what our clients say about working with us.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
+            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6">"The strategy session completely transformed our approach to the World Cup."</blockquote>
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-center text-white text-xl">🏟️</div>
-                <div className="ml-4">
-                  <p className="font-medium text-slate-900">Alex Johnson</p>
-                  <p className="text-slate-500 text-sm">CEO, Fan Experience Co.</p>
+              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"The strategy session with FWC26 Consulting was incredibly eye-opening. I came in with just a general idea and walked away with a clear, actionable roadmap tailored to my business goals. They asked the right questions, challenged my assumptions, and helped me see real opportunities."</blockquote>
+              <div className="flex items-center justify-center mt-auto">
+                <div className="text-center">
+                  <p className="font-medium text-slate-900">Kemi O.</p>
+                  <p className="text-slate-500 text-sm">Owner, Kulture Streetwear Co.</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
+            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6">"We've optimized our pricing strategy and saw a 40% increase in bookings."</blockquote>
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-center text-white text-xl">🎯</div>
-                <div className="ml-4">
-                  <p className="font-medium text-slate-900">Maria Garcia</p>
-                  <p className="text-slate-500 text-sm">Founder, Event Masters</p>
+              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"They provided a strategic roadmap that broke things down clearly. Their insights were specific to our industry, and the actionable steps helped us position our business to take full advantage of the upcoming market opportunity."</blockquote>
+              <div className="flex items-center justify-center mt-auto">
+                <div className="text-center">
+                  <p className="font-medium text-slate-900">Jason M.</p>
+                  <p className="text-slate-500 text-sm">Co-Founder, MetroLink Tours</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
+            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6">"The team's expertise in sports marketing is unmatched."</blockquote>
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-center text-white text-xl">⚽</div>
-                <div className="ml-4">
-                  <p className="font-medium text-slate-900">James Wilson</p>
-                  <p className="text-slate-500 text-sm">Director, Sports Marketing Inc.</p>
+              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"I had an idea but didn't know where to start. The team at FWC26 Consulting helped me validate it, understand my market, and turn it into a viable business plan. Their strategic insight, especially around the FIFA 2026 landscape, gave me the direction I needed."</blockquote>
+              <div className="flex items-center justify-center mt-auto">
+                <div className="text-center">
+                  <p className="font-medium text-slate-900">Aisha L.</p>
+                  <p className="text-slate-500 text-sm">Solo Entrepreneur</p>
                 </div>
               </div>
             </div>

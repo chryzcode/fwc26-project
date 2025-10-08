@@ -12,6 +12,7 @@ function BookContent() {
     description: string;
     tier: number;
   } | null>(null);
+  const [paymentOption, setPaymentOption] = useState<'full' | 'installments'>('full');
   const [calendlyUrl, setCalendlyUrl] = useState(`${process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || 'https://calendly.com/fwc26info/30min'}?embed=true`);
   const [serviceTitle, setServiceTitle] = useState('Book Your FIFA 2026 Strategy Session');
   const [serviceDescription, setServiceDescription] = useState('Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.');
@@ -76,10 +77,12 @@ function BookContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           serviceName: serviceDetails.service,
-          amount: serviceDetails.amount,
+          amount: paymentOption === 'installments' ? Math.ceil(serviceDetails.amount / (serviceDetails.tier === 2 ? 2 : 4)) : serviceDetails.amount,
           description: serviceDetails.description,
           email: 'customer@example.com',
           tier: serviceDetails.tier,
+          paymentOption: paymentOption,
+          totalAmount: serviceDetails.amount,
           calendlyUrl: 'https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026'
         })
       });
@@ -116,15 +119,60 @@ function BookContent() {
             <div className="rounded-2xl bg-white/90 w-full max-w-2xl mb-8 p-8 shadow-xl animate-fade-in">
               <h2 className="text-2xl font-bold text-blue-600 mb-4">{serviceDetails.service}</h2>
               <p className="text-gray-700 mb-4">{serviceDetails.description}</p>
-              <div className="text-3xl font-bold text-blue-600 mb-6">
-                ${serviceDetails.amount} CAD
-              </div>
+              
+              {/* Payment Options */}
+              {serviceDetails.tier === 2 || serviceDetails.tier === 3 ? (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Payment Options</h3>
+                  <div className="space-y-3">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentOption"
+                        value="full"
+                        checked={paymentOption === 'full'}
+                        onChange={(e) => setPaymentOption(e.target.value as 'full' | 'installments')}
+                        className="mr-3"
+                      />
+                      <div>
+                        <span className="font-medium">Pay in Full</span>
+                        <div className="text-2xl font-bold text-blue-600">${serviceDetails.amount} CAD</div>
+                      </div>
+                    </label>
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentOption"
+                        value="installments"
+                        checked={paymentOption === 'installments'}
+                        onChange={(e) => setPaymentOption(e.target.value as 'full' | 'installments')}
+                        className="mr-3"
+                      />
+                      <div>
+                        <span className="font-medium">
+                          {serviceDetails.tier === 2 ? '2 Installments' : '4 Installments'}
+                        </span>
+                        <div className="text-2xl font-bold text-blue-600">
+                          ${Math.ceil(serviceDetails.amount / (serviceDetails.tier === 2 ? 2 : 4))} CAD each
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          Total: ${serviceDetails.amount} CAD
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-3xl font-bold text-blue-600 mb-6">
+                  ${serviceDetails.amount} CAD
+                </div>
+              )}
               
               <button
                 onClick={handlePayment}
                 className="w-full px-8 py-4 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Complete Payment
+                {paymentOption === 'installments' ? 'Start Payment Plan' : 'Complete Payment'}
               </button>
             </div>
           </>

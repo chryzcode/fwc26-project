@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { serviceName, amount, description, email, tier, calendlyUrl } = await request.json();
+    const { serviceName, amount, description, email, tier, paymentOption, totalAmount, calendlyUrl } = await request.json();
 
     if (!serviceName || !amount || !email) {
       return NextResponse.json(
@@ -45,8 +45,8 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: 'cad',
             product_data: {
-              name: serviceName,
-              description: description,
+              name: paymentOption === 'installments' ? `${serviceName} - First Installment` : serviceName,
+              description: paymentOption === 'installments' ? `${description} (First of ${tier === 2 ? '2' : '4'} installments)` : description,
             },
             unit_amount: Math.round(amount * 100), // Convert to cents and ensure it's an integer
           },
@@ -61,6 +61,8 @@ export async function POST(request: NextRequest) {
         serviceName,
         description,
         tier: tier?.toString() || '1',
+        paymentOption: paymentOption || 'full',
+        totalAmount: totalAmount?.toString() || amount.toString(),
         calendlyUrl: calendlyUrl || 'https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026',
       },
       billing_address_collection: 'required',
