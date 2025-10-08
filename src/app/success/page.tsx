@@ -165,7 +165,7 @@ function SuccessPageContent() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center"> 
           <a
-            href="https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026"
+            href={`${process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || 'https://calendly.com/fwc26info/30min'}?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-200"
@@ -174,7 +174,7 @@ function SuccessPageContent() {
           </a>
           
           <a
-            href="https://calendly.com/fwc26info/full-monetization-blueprint-tier-2?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026"
+            href={`${process.env.NEXT_PUBLIC_CALENDLY_TIER2_URL || 'https://calendly.com/fwc26info/full-monetization-blueprint-tier-2'}?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all duration-200"
@@ -183,7 +183,7 @@ function SuccessPageContent() {
           </a>
           
           <a
-            href="https://calendly.com/fwc26info/business-launch-support-tier-3?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026"
+            href={`${process.env.NEXT_PUBLIC_CALENDLY_TIER3_URL || 'https://calendly.com/fwc26info/business-launch-support-tier-3'}?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all duration-200"

@@ -30,11 +30,11 @@ export default function ServiceCard({
   const getCalendlyUrlForTier = (tier?: number): string => {
     switch (tier) {
       case 2:
-        return "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER2_URL || "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
       case 3:
-        return "https://calendly.com/fwc26info/business-launch-support-tier-3";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER3_URL || "https://calendly.com/fwc26info/business-launch-support-tier-3";
       default:
-        return "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
     }
   };
   
