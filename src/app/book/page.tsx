@@ -12,6 +12,20 @@ function BookContent() {
     description: string;
     tier: number;
   } | null>(null);
+  const [calendlyUrl, setCalendlyUrl] = useState('https://calendly.com/fwc26info/30min?embed=true');
+  const [serviceTitle, setServiceTitle] = useState('Book Your FIFA 2026 Strategy Session');
+  const [serviceDescription, setServiceDescription] = useState('Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.');
+
+  // Set default service (Tier 1) on component mount
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (!serviceParam) {
+      // Default to tier 1 if no service parameter
+      setCalendlyUrl('https://calendly.com/fwc26info/30min?embed=true');
+      setServiceTitle('Book Your FIFA 2026 Strategy Session');
+      setServiceDescription('Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.');
+    }
+  }, []);
 
   useEffect(() => {
     // Check if user is coming from Calendly with payment details
@@ -28,6 +42,28 @@ function BookContent() {
         tier: parseInt(tier || '1')
       });
       setShowPayment(true);
+    } else {
+      // Handle service parameter for Calendly embedding
+      const serviceParam = searchParams.get('service');
+      if (serviceParam) {
+        switch (serviceParam) {
+          case 'tier2':
+            setCalendlyUrl('https://calendly.com/fwc26info/full-monetization-blueprint-tier-2?embed=true');
+            setServiceTitle('Book Your Monetization Blueprint Session');
+            setServiceDescription('Secure your spot for a comprehensive monetization blueprint session to maximize your FIFA 2026 revenue opportunities.');
+            break;
+          case 'tier3':
+            setCalendlyUrl('https://calendly.com/fwc26info/business-launch-support-tier-3?embed=true');
+            setServiceTitle('Book Your Full-Service Launch Session');
+            setServiceDescription('Secure your spot for a full-service launch session to get complete support for your FIFA 2026 business launch.');
+            break;
+          default:
+            // Default to tier 1
+            setCalendlyUrl('https://calendly.com/fwc26info/30min?embed=true');
+            setServiceTitle('Book Your FIFA 2026 Strategy Session');
+            setServiceDescription('Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.');
+        }
+      }
     }
   }, [searchParams]);
 
@@ -95,20 +131,20 @@ function BookContent() {
         ) : (
           <>
             <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-6 animate-fade-in">
-              Book Your FIFA 2026 Strategy Session
+              {serviceTitle}
             </h1>
             <p className="text-gray-700 mb-10 max-w-xl text-lg animate-fade-in">
-              Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.
+              {serviceDescription}
             </p>
             
             {/* Calendly Embed */}
             <div className="rounded-2xl bg-white/90 w-full max-w-4xl mb-8 flex flex-col items-center justify-center shadow-xl animate-fade-in overflow-hidden">
               <iframe
-                src="https://calendly.com/fwc26info/30min?embed=true"
+                src={calendlyUrl}
                 width="100%"
                 height="700"
                 frameBorder="0"
-                title="Book FIFA 2026 Strategy Session"
+                title={serviceTitle}
                 className="rounded-2xl"
               />
             </div>
