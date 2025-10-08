@@ -74,7 +74,7 @@ export default function ServiceCard({
               onClick={handleBookAndPay}
               className="block w-full max-w-xs px-6 py-2 rounded-xl border-2 border-primary from-primary to-accent text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center"
             >
-              Book & Pay<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+              Book<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </button>
           )}
         </div>
