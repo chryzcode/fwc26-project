@@ -96,7 +96,7 @@ export async function uploadToCloudinaryServer(file: File | Buffer, folder?: str
   if (file instanceof File) {
     formData.append('file', file);
   } else {
-    formData.append('file', new Blob([file]), 'document');
+    formData.append('file', new Blob([new Uint8Array(file)]), 'document');
   }
   
   formData.append('upload_preset', config.uploadPreset);

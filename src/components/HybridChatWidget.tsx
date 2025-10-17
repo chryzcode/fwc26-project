@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { crispUtils } from './CrispChatWidget';
 
 // Extend the Window interface to include Crisp types
@@ -14,21 +14,41 @@ declare global {
 export default function HybridChatWidget() {
   const [isCrispLoaded, setIsCrispLoaded] = useState(false);
 
-  useEffect(() => {
-    // Wait for Crisp to load
-    const checkCrispLoaded = () => {
-      if (window.$crisp && window.crisp) {
-        setIsCrispLoaded(true);
-        setupCrispIntegration();
-      } else {
-        setTimeout(checkCrispLoaded, 100);
-      }
-    };
-
-    checkCrispLoaded();
+  const sendAIResponse = useCallback((responseText: string) => {
+    if (window.$crisp) {
+      // Send message as if it's from the AI assistant
+      window.$crisp.push(['do', 'message:send', ['text', responseText]]);
+    }
   }, []);
 
-  const setupCrispIntegration = () => {
+  const handleUserMessage = useCallback(async (messageText: string) => {
+    try {
+      // Call your existing OpenAI API
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: messageText,
+          context: 'FIFA 2026 business opportunities, consulting services, Toronto, Vancouver',
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Send AI response back through Crisp
+        sendAIResponse(data.response);
+      } else {
+        sendAIResponse('Sorry, I\'m having trouble connecting right now. Please try again later or contact us directly.');
+      }
+    } catch (error) {
+      console.error('AI Chat error:', error);
+      sendAIResponse('Sorry, I\'m having trouble connecting right now. Please try again later or contact us directly.');
+    }
+  }, [sendAIResponse]);
+
+  const setupCrispIntegration = useCallback(() => {
     if (!window.$crisp) return;
 
     // Set up Crisp with FIFA 2026 business context
@@ -54,41 +74,21 @@ export default function HybridChatWidget() {
         sendAIResponse('Hello! I\'m here to help you with FIFA 2026 business opportunities. How can I assist you today?');
       }, 1000);
     }]);
-  };
+  }, [handleUserMessage, sendAIResponse]);
 
-  const handleUserMessage = async (messageText: string) => {
-    try {
-      // Call your existing OpenAI API
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: messageText,
-          context: 'FIFA 2026 business opportunities, consulting services, Toronto, Vancouver',
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        // Send AI response back through Crisp
-        sendAIResponse(data.response);
+  useEffect(() => {
+    // Wait for Crisp to load
+    const checkCrispLoaded = () => {
+      if (window.$crisp && window.crisp) {
+        setIsCrispLoaded(true);
+        setupCrispIntegration();
       } else {
-        sendAIResponse('Sorry, I\'m having trouble connecting right now. Please try again later or contact us directly.');
+        setTimeout(checkCrispLoaded, 100);
       }
-    } catch (error) {
-      console.error('AI Chat error:', error);
-      sendAIResponse('Sorry, I\'m having trouble connecting right now. Please try again later or contact us directly.');
-    }
-  };
+    };
 
-  const sendAIResponse = (responseText: string) => {
-    if (window.$crisp) {
-      // Send message as if it's from the AI assistant
-      window.$crisp.push(['do', 'message:send', ['text', responseText]]);
-    }
-  };
+    checkCrispLoaded();
+  }, [setupCrispIntegration]);
 
   // Function to programmatically open the hybrid chat
   const openHybridChat = () => {

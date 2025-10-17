@@ -26,7 +26,7 @@ function BookContent() {
       setServiceTitle('Book Your FIFA 2026 Strategy Session');
       setServiceDescription('Secure your spot for a 30-minute strategy session to monetize FIFA 2026 opportunities in Toronto and Vancouver.');
     }
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     // Check if user is coming from Calendly with payment details
