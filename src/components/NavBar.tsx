@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const navLinks = [
   { href: "/#commercial-opportunities", label: "Commercial Opportunities" },
   { href: "/events", label: "Matches" },
+  { href: "/vendor-support", label: "Vendor Support" },
   { href: "/#services", label: "Services" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -34,8 +35,8 @@ export default function NavBar() {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Brand */}
-        <Link href="/" className="text-xl font-bold text-blue-900 tracking-wide">
-        FWC Marketing Group
+        <Link href="/" className="text-2xl font-black text-blue-900 tracking-wider bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+        FWC26 Marketing Group
         </Link>
 
         {/* Desktop Nav */}

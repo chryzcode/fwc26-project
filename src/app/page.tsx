@@ -66,7 +66,19 @@ export default function Home() {
 
             <div className="my-20">
             <h1 className="text-6xl font-extrabold mb-10 text-white drop-shadow-xl animate-fade-in px-4 md:px-8" style={{textShadow: '0 2px 16px rgba(0,0,0,0.9)'}}>FIFA World Cup 2026 Business Opportunities</h1>
-            <p className="text-3xl text-white mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-200 px-4 md:px-8" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Monetize FIFA 2026 Toronto Vancouver - Expert Consulting for FIFA Vendors Canada</p>
+            
+            {/* Highlighted USP Section */}
+            <div className="mb-8 animate-fade-in animation-delay-200 px-4 md:px-8">
+              <div className="bg-white/20 text-white max-w-4xl mx-auto rounded-2xl p-8 md:p-12 border border-white/30 shadow-2xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-black mb-4 tracking-tight">$940M</div>
+                  <div className="text-2xl md:text-3xl font-bold mb-4">ECONOMIC OUTPUT</div>
+                  <div className="text-lg md:text-xl font-semibold">Unmatched economic impact for GTA & Vancouver</div>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-2xl text-white mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-300 px-4 md:px-8" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Hosting the tournament will bring an unprecedented positive economic output to the GTA and Vancouver. A contribution that will be felt far past the tournament's close.</p>
             </div>
         
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-in animation-delay-300">
@@ -140,7 +152,7 @@ export default function Home() {
                           <h2 className="text-4xl font-extrabold text-blue-600 mb-6">FIFA 2026 Business Consulting - Comprehensive Business Solutions</h2>
             <p className="text-lg text-secondary text-center">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
             {/* Service Cards with background images */}
             <ServiceCard
               title="Strategy Sessions"
@@ -173,6 +185,18 @@ export default function Home() {
                amount={3999}
                serviceDescription="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
                tier={3}
+             />
+             
+             <ServiceCard
+               title="Vendor Support Services"
+               description="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
+               features={["Vendor Application Support", "Permit & License Assistance", "FIFA Licensing Support", "Business Setup Documentation", "Vendor Education Sessions", "Ongoing Tournament Support"]}
+               backgroundImage="/Commercial-Opportunity.jpg"
+               isFree={false}
+               serviceName="Vendor Support Services"
+               amount={1499}
+               serviceDescription="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
+               tier={4}
              />
           </div>
         </div>
