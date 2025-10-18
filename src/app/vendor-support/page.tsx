@@ -229,13 +229,21 @@ export default function VendorSupportPage() {
       {/* Program Overview */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
-              <h2 className="text-3xl font-bold text-blue-600 mb-6">FWC26 Small Business Initiative Program</h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
+            <div className="group bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <h2 className="text-3xl font-bold text-blue-600 mb-6">FWC26 Small Business Initiative Program (SBIP)</h2>
               <p className="text-gray-700 mb-6">
-                Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
+                Empowering local entrepreneurs for FIFA World Cup 2026™. Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
               </p>
-              <ul className="space-y-3 text-gray-700">
+              <div className="mb-6">
+                <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-blue-600 text-white mb-4">
+                  Launch Date: February 17, 2026
+                </span>
+                <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
+                  Pre-Registration Open Now!
+                </span>
+              </div>
+              <ul className="space-y-3 text-gray-700 mb-8">
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 font-bold">✓</span>
                   <span>Vendor application & compliance support</span>
@@ -253,33 +261,188 @@ export default function VendorSupportPage() {
                   <span>Marketing & operations strategy</span>
                 </li>
               </ul>
+              <div className="text-center mt-auto">
+                <a 
+                  href="/docs/FWC26_SBIP_Guidelines_and_FAQ.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  📄 Download Program Guidelines & FAQ
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
               <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-              <div className="relative p-8">
-                <h2 className="text-3xl font-bold text-white mb-6">FWC26 Canadian Vendor Initiative Program</h2>
+              <div className="relative p-8 flex flex-col h-full">
+                <h2 className="text-3xl font-bold text-white mb-6">FWC26 Vendor Support Program (VSP)</h2>
                 <p className="text-slate-200 mb-6">
-                  Specialized vendor program for Canadian businesses seeking FIFA 2026 vendor opportunities and licensing support.
+                  Vendor Support Services are designed to help navigate the complex requirements of vending during the FIFA World Cup 2026, encompassing applications and permits, as well as marketing and business readiness.
                 </p>
-                <ul className="space-y-4">
+                <div className="mb-6">
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-slate-600 text-white mb-4">
+                    Launch Date: March 2026
+                  </span>
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
+                    Registration Open Now!
+                  </span>
+                </div>
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✓</span>
-                    <span className="text-slate-200">FIFA licensing support</span>
+                    <span className="text-slate-200">Vendor Application & Compliance Support</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✓</span>
-                    <span className="text-slate-200">Public viewing license applications</span>
+                    <span className="text-slate-200">Licensing & Permit Assistance</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✓</span>
-                    <span className="text-slate-200">Municipal vendor permits</span>
+                    <span className="text-slate-200">Public Viewing & FIFA Licensing Support</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✓</span>
-                    <span className="text-slate-200">Ongoing tournament support</span>
+                    <span className="text-slate-200">Business Setup & Documentation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Vendor Education & Strategy Sessions</span>
                   </li>
                 </ul>
+                <div className="text-center mt-auto">
+                  <a 
+                    href="https://calendly.com/fwc26info/vsp-pre-onboarding-consultation" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-white text-slate-800 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Book Pre-Onboarding Consultation
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VSP Program Framework */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Vendor Support Program Framework</h2>
+            {/* Desktop Layout: 3 cards top row, 2 cards centered bottom row */}
+            <div className="hidden lg:block">
+              {/* Top Row - 3 Cards */}
+              <div className="grid grid-cols-3 gap-6 mb-6">
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                  <div className="text-center h-full flex flex-col justify-between">
+                    <div>
+                      <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">1</div>
+                      <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 1</h3>
+                      <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Vendor Readiness Assessment</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">Initial consultation, checklist review, and documentation audit</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                  <div className="text-center h-full flex flex-col justify-between">
+                    <div>
+                      <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">2</div>
+                      <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 2</h3>
+                      <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Application Preparation & Submission</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">Complete application support, form completion, and submission tracking</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                  <div className="text-center h-full flex flex-col justify-between">
+                    <div>
+                      <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">3</div>
+                      <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 3</h3>
+                      <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Permit & License Acquisition</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">Assistance with city and FIFA approvals</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Bottom Row - 2 Cards Centered */}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-2 gap-6 max-w-2xl">
+                  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                    <div className="text-center h-full flex flex-col justify-between">
+                      <div>
+                        <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">4</div>
+                        <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 4</h3>
+                        <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Vendor Marketing & Operations Strategy</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">Visibility strategy, booth setup support, and promotional content</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                    <div className="text-center h-full flex flex-col justify-between">
+                      <div>
+                        <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">5</div>
+                        <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 5</h3>
+                        <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Ongoing Tournament Support</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">On-call assistance, compliance tracking, and post-event reporting</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile/Tablet Layout: Responsive grid */}
+            <div className="lg:hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">1</div>
+                    <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 1</h3>
+                    <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Vendor Readiness Assessment</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Initial consultation, checklist review, and documentation audit</p>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">2</div>
+                    <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 2</h3>
+                    <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Application Preparation & Submission</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Complete application support, form completion, and submission tracking</p>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">3</div>
+                    <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 3</h3>
+                    <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Permit & License Acquisition</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Assistance with city and FIFA approvals</p>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">4</div>
+                    <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 4</h3>
+                    <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Vendor Marketing & Operations Strategy</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Visibility strategy, booth setup support, and promotional content</p>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">5</div>
+                    <h3 className="font-bold text-blue-600 mb-3 text-lg">Phase 5</h3>
+                    <h4 className="font-semibold mb-3 text-gray-800 text-base leading-tight">Ongoing Tournament Support</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">On-call assistance, compliance tracking, and post-event reporting</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -303,7 +466,7 @@ export default function VendorSupportPage() {
                       : 'text-gray-600 hover:text-blue-600'
                   }`}
                 >
-                  Small Business Initiative
+                  SBIP Pre-Register
                 </button>
                 <button
                   onClick={() => setActiveForm('vendor-initiative')}
@@ -313,7 +476,7 @@ export default function VendorSupportPage() {
                       : 'text-gray-600 hover:text-slate-800'
                   }`}
                 >
-                  Vendor Initiative
+                  VSP Register
                 </button>
               </div>
             </div>
@@ -468,7 +631,7 @@ export default function VendorSupportPage() {
                     disabled={isSubmitting}
                     className="w-full py-4 rounded-lg bg-blue-600 text-white font-bold text-lg shadow-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Submitting Registration...' : 'Register for Small Business Initiative'}
+                    {isSubmitting ? 'Submitting Pre-Registration...' : 'Pre-Register for SBIP'}
                   </button>
                 </form>
               </div>
@@ -613,7 +776,7 @@ export default function VendorSupportPage() {
                     disabled={isSubmitting}
                     className="w-full py-4 rounded-lg bg-slate-800 text-white font-bold text-lg shadow-lg hover:bg-slate-900 transition disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Submitting Pre-Registration...' : 'Pre-Register for Vendor Initiative'}
+                    {isSubmitting ? 'Submitting Registration...' : 'Register for VSP'}
                   </button>
                 </form>
               </div>

@@ -99,55 +99,86 @@ export function generateEmailTemplate(template: string, data: Record<string, any
   switch (template) {
     case 'small-business-welcome':
       return `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #2563eb;">Welcome to FWC26 Small Business Initiative Program!</h1>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #2563eb;">Welcome to the FWC26 Small Business Initiative Program!</h1>
           <p>Hi ${data.name},</p>
-          <p>Thank you for registering for the FWC26 Small Business Initiative Program. We're excited to help your business, <strong>${data.businessName}</strong>, capitalize on FIFA 2026 opportunities in ${data.city}.</p>
+          <p>Thank you for registering for the FWC26 Small Business Initiative Program (SBIP)!</p>
+          <p>You're now part of a movement helping Toronto's small businesses harness the global spotlight of the FIFA World Cup 2026™.</p>
+          <p>Our goal is to empower local entrepreneurs with marketing support, partnership opportunities, and visibility during the games.</p>
           
-          <h2>What's Next?</h2>
+          <h2 style="color: #2563eb;">Next Steps:</h2>
           <ol>
-            <li>Schedule your consultation with our team</li>
-            <li>Receive your personalized business assessment</li>
-            <li>Get started with your FIFA 2026 strategy</li>
+            <li>Review the attached Program Guidelines & FAQ to understand participation criteria and upcoming milestones.</li>
+            <li>Complete the Small Business Readiness Form (link below).</li>
+            <li>Join our email list for curated updates, workshops, and vendor spotlights.</li>
           </ol>
+          
+          <p><strong>Program Launch Date: February 17, 2026</strong><br>
+          Stay tuned for important onboarding updates as we move toward kickoff.</p>
           
           <div style="text-align: center; margin: 30px 0;">
             <a href="https://calendly.com/fwc26info/small-business-consultation" 
-               style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
-              Schedule Your Consultation
+               style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Complete Readiness Form
+            </a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter" 
+               style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Join the SBIP Mailing List
             </a>
           </div>
           
-          <p>We'll be in touch within 24 hours with more information about the program and next steps.</p>
+          <div style="text-align: center; margin: 20px 0;">
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_SBIP_Guidelines_and_FAQ.pdf" 
+               style="background-color: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
+              📄 Download Program Guidelines & FAQ
+            </a>
+          </div>
           
-          <p>Best regards,<br>The FWC26 Team</p>
+          <p><strong>For support or inquiries:</strong><br>
+          ■ support@fwc26.ca<br>
+          ■ www.fwc26.ca | Instagram: @fwc26_canada</p>
+          
+          <p>Warm regards,<br>FWC26 SBIP / Support team</p>
         </div>
       `;
 
     case 'vendor-initiative-welcome':
       return `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #1f2937;">Welcome to FWC26 Canadian Vendor Initiative Program!</h1>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #1f2937;">Welcome to the FWC26 Vendor Support Program!</h1>
           <p>Hi ${data.name},</p>
-          <p>Thank you for pre-registering for the FWC26 Canadian Vendor Initiative Program. We're excited to help your business, <strong>${data.businessName}</strong>, navigate FIFA 2026 vendor requirements in ${data.city}.</p>
+          <p>Thank you for registering for the FWC26 Vendor Support Program (VSP) — your first step toward participating in one of the most exciting business opportunities leading up to the FIFA World Cup 2026™ in Toronto!</p>
+          <p>We're thrilled to have you join this growing community of local vendors, suppliers, and entrepreneurs preparing to showcase their products and services during the global celebration.</p>
           
-          <h2>What's Next?</h2>
+          <h2 style="color: #1f2937;">Next Steps:</h2>
           <ol>
-            <li>Schedule your vendor consultation</li>
-            <li>Receive your vendor readiness assessment</li>
-            <li>Get guidance on permits and licensing</li>
+            <li>Review the Program Guidelines PDF (attached), which includes timelines, eligibility details, and FAQ answers.</li>
+            <li>Confirm your business profile via the vendor intake form (link below).</li>
+            <li>Join our official email list to stay up-to-date on training sessions, procurement alerts, and pre-launch workshops.</li>
           </ol>
           
-          <div style="text-align: center; margin: 30px 0;">
-            <a href="https://calendly.com/fwc26info/vendor-consultation" 
-               style="background-color: #1f2937; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
-              Schedule Your Consultation
+          <p><strong>Program Launch Date: March 3, 2026</strong><br>
+          Make sure you're ready before then; the necessary pre-qualification and compliance steps will open soon.</p>
+          
+          <div style="text-align: center; margin: 20px 0;">
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_VSP_Guidelines_and_FAQ.pdf" 
+               style="background-color: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;">
+              📄 Download Program Guidelines & FAQ
             </a>
           </div>
           
-          <p>We'll be in touch within 24 hours with more information about the program and next steps.</p>
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="https://calendly.com/fwc26info/vsp-pre-onboarding-consultation" 
+               style="background-color: #1f2937; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Complete Vendor Profile
+            </a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter" 
+               style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Join Our Email List
+            </a>
+          </div>
           
-          <p>Best regards,<br>The FWC26 Team</p>
+          <p>Warm Regards,<br>FWC26 Vendor support program / Support team</p>
         </div>
       `;
 
@@ -168,44 +199,62 @@ export function generateTextTemplate(template: string, data: Record<string, any>
   switch (template) {
     case 'small-business-welcome':
       return `
-Welcome to FWC26 Small Business Initiative Program!
+Welcome to the FWC26 Small Business Initiative Program!
 
 Hi ${data.name},
 
-Thank you for registering for the FWC26 Small Business Initiative Program. We're excited to help your business, ${data.businessName}, capitalize on FIFA 2026 opportunities in ${data.city}.
+Thank you for registering for the FWC26 Small Business Initiative Program (SBIP)!
 
-What's Next?
-1. Schedule your consultation with our team
-2. Receive your personalized business assessment
-3. Get started with your FIFA 2026 strategy
+You're now part of a movement helping Toronto's small businesses harness the global spotlight of the FIFA World Cup 2026™.
 
-Schedule Your Consultation: https://calendly.com/fwc26info/small-business-consultation
+Our goal is to empower local entrepreneurs with marketing support, partnership opportunities, and visibility during the games.
 
-We'll be in touch within 24 hours with more information about the program and next steps.
+Next Steps:
+1. Review the attached Program Guidelines & FAQ to understand participation criteria and upcoming milestones.
+2. Complete the Small Business Readiness Form (link below).
+3. Join our email list for curated updates, workshops, and vendor spotlights.
 
-Best regards,
-The FWC26 Team
+Program Launch Date: February 17, 2026
+Stay tuned for important onboarding updates as we move toward kickoff.
+
+Complete Readiness Form: https://calendly.com/fwc26info/small-business-consultation
+Join the SBIP Mailing List: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter
+
+Download Program Guidelines & FAQ: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_SBIP_Guidelines_and_FAQ.pdf
+
+For support or inquiries:
+■ support@fwc26.ca
+■ www.fwc26.ca | Instagram: @fwc26_canada
+
+Warm regards,
+FWC26 SBIP / Support team
       `;
 
     case 'vendor-initiative-welcome':
       return `
-Welcome to FWC26 Canadian Vendor Initiative Program!
+Welcome to the FWC26 Vendor Support Program!
 
 Hi ${data.name},
 
-Thank you for pre-registering for the FWC26 Canadian Vendor Initiative Program. We're excited to help your business, ${data.businessName}, navigate FIFA 2026 vendor requirements in ${data.city}.
+Thank you for registering for the FWC26 Vendor Support Program (VSP) — your first step toward participating in one of the most exciting business opportunities leading up to the FIFA World Cup 2026™ in Toronto!
 
-What's Next?
-1. Schedule your vendor consultation
-2. Receive your vendor readiness assessment
-3. Get guidance on permits and licensing
+We're thrilled to have you join this growing community of local vendors, suppliers, and entrepreneurs preparing to showcase their products and services during the global celebration.
 
-Schedule Your Consultation: https://calendly.com/fwc26info/vendor-consultation
+Next Steps:
+1. Review the Program Guidelines PDF (attached), which includes timelines, eligibility details, and FAQ answers.
+2. Confirm your business profile via the vendor intake form (link below).
+3. Join our official email list to stay up-to-date on training sessions, procurement alerts, and pre-launch workshops.
 
-We'll be in touch within 24 hours with more information about the program and next steps.
+Program Launch Date: March 3, 2026
+Make sure you're ready before then; the necessary pre-qualification and compliance steps will open soon.
 
-Best regards,
-The FWC26 Team
+Complete Vendor Profile: https://calendly.com/fwc26info/vsp-pre-onboarding-consultation
+Join Our Email List: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter
+
+Download Program Guidelines & FAQ: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_VSP_Guidelines_and_FAQ.pdf
+
+Warm Regards,
+FWC26 Vendor support program / Support team
       `;
 
     default:

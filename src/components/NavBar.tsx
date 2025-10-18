@@ -35,17 +35,23 @@ export default function NavBar() {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Brand */}
-        <Link href="/" className="text-2xl font-black text-blue-900 tracking-wider bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-        FWC26 Marketing Group
+        <Link href="/" className="flex items-center gap-3">
+          {/* Logo placeholder - replace with actual logo */}
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-lg">F</span>
+          </div>
+          <span className="text-2xl font-black text-blue-900 tracking-wider bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent font-serif">
+            FWC26 Marketing Group
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-8 items-center">
+        <ul className="hidden lg:flex gap-6 items-center">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-blue-900 font-semibold hover:text-blue-600 transition-colors"
+                className="text-blue-900 font-semibold hover:text-blue-600 transition-colors text-sm"
               >
                 {link.label}
               </a>
@@ -56,7 +62,7 @@ export default function NavBar() {
         {/* Hamburger */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden text-blue-900"
+          className="lg:hidden text-blue-900"
           aria-label="Open menu"
         >
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"

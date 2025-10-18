@@ -4,31 +4,105 @@ import ServiceCard from "../components/ServiceCard";
 
 
 export const metadata = {
-  title: "FIFA 2026 Biz Advantage | Business & Marketing Consultancy",
-  description: "Monetization strategy consulting for entrepreneurs and businesses during the FIFA World Cup 2026 in Vancouver and Toronto.",
+  title: "FWC26 Marketing Group | FIFA World Cup 2026 Business Opportunities Canada",
+  description: "FWC26 Marketing Group provides FIFA World Cup 2026 business consulting, vendor support programs, and small business initiatives for Toronto and Vancouver. $940M economic impact opportunity.",
   keywords: [
-    "FIFA 2026",
-    "Business Consulting",
-    "Monetization",
-    "Vancouver",
-    "Toronto",
-    "World Cup",
-    "Strategy",
-    "Entrepreneurs",
-    "Small Business",
+    "FWC26 web design and marketing in Canada",
+    "FIFA WORLD CUP 2026 Toronto small business support",
+    "FIFA WORLD CUP 2026 Vancouver vendor license",
+    "Toronto fifa world cup 2026",
+    "World Cup 2026",
+    "vancouver fifa world cup 2026",
+    "FWC26 Vancouver business opportunities",
+    "FIFA WORLD CUP 2026 Canada small business initiative program",
+    "How to get a FIFA 2026 vendor license in Toronto",
+    "Steps to launch a food truck for FIFA 2026 Canada",
+    "How to monetize the FIFA World Cup 2026 in Canada",
+    "FWC26 business development services",
+    "FIFA WORLD CUP 2026 permits and vendor applications",
+    "FWC26 Marketing Group",
+    "FWC26 vendor program support",
+    "FWC26 small business initiative",
+    "FWC26 Toronto business vendors",
+    "WEARE26 Toronto",
+    "WEARE26 Vancouver",
+    "FWC26 consulting services Canada",
+    "FIFA WORLD CUP 2026 small business funding Canada",
+    "FIFA 2026 vendor program Vancouver",
+    "Small business FIFA World Cup 2026 Canada",
+    "How to start a business for the FIFA World Cup 2026",
+    "FWC26 vendor license Canada",
+    "FWC26 food truck business in Toronto",
+    "FWC26 Canada marketing consulting",
+    "FWC26 permits and licenses Canada",
+    "FIFA WORLD CUP 2026 vendor support program",
+    "FIFA World Cup 2026 business opportunities",
+    "FWC26 Canada business consulting",
+    "FIFA WORLD CUP 2026 vendor program",
+    "FWC26 Canada entrepreneur program",
+    "FIFA 2026 Canada hospitality business",
+    "FWC26 Toronto business opportunities",
+    "FWC26 Vancouver business vendors",
+    "FWC26 marketing services in Toronto"
   ],
   openGraph: {
-    title: "FIFA 2026 Biz Advantage | Business & Marketing Consultancy",
-    description: "Monetization strategy consulting for entrepreneurs and businesses during the FIFA World Cup 2026 in Vancouver and Toronto.",
+    title: "FWC26 Marketing Group | FIFA World Cup 2026 Business Opportunities Canada",
+    description: "FWC26 Marketing Group provides FIFA World Cup 2026 business consulting, vendor support programs, and small business initiatives for Toronto and Vancouver. $940M economic impact opportunity.",
     url: "https://www.fwc26.ca/",
-    siteName: "FIFA 2026 Biz Advantage",
+    siteName: "FWC26 Marketing Group",
     type: "website",
   },
 };
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FWC26 Marketing Group",
+    "description": "FIFA World Cup 2026 business consulting and vendor support services for Toronto and Vancouver",
+    "url": "https://www.fwc26.ca",
+    "logo": "https://www.fwc26.ca/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "contactType": "customer service",
+      "email": "support@fwc26.ca"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://www.instagram.com/fwc26_canada"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "FWC26 Small Business Initiative Program",
+        "description": "Comprehensive support for small businesses during FIFA World Cup 2026",
+        "price": "0",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer", 
+        "name": "FWC26 Vendor Support Program",
+        "description": "Vendor application and compliance support for FIFA 2026",
+        "price": "1499",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  };
+
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{background: 'none'}}>
          {/* Countdown timer - centered on mobile, right on desktop */}
