@@ -57,12 +57,57 @@ export async function addToMailchimp(data: MailingListData) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`Mailchimp API error: ${errorData.detail || response.statusText}`);
+      
+      // Handle duplicate email gracefully - try to update existing member
+      if (errorData.title === 'Member Exists' || errorData.detail?.includes('already a list member')) {
+        console.log(`Member ${data.email} already exists, updating instead...`);
+        
+        // Generate MD5 hash of email for Mailchimp member ID
+        const crypto = require('crypto');
+        const memberId = crypto.createHash('md5').update(data.email.toLowerCase()).digest('hex');
+        
+        const updateResponse = await fetch(
+          `https://${MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members/${memberId}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Basic ${base64Auth}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email_address: data.email,
+              status: 'subscribed',
+              merge_fields: {
+                FNAME: data.firstName,
+                LNAME: data.lastName,
+                ...data.customFields
+              },
+              tags: data.tags
+            }),
+          }
+        );
+        
+        if (updateResponse.ok) {
+          console.log(`Successfully updated existing member: ${data.email}`);
+          return await updateResponse.json();
+        } else {
+          const updateErrorData = await updateResponse.json();
+          console.error('Failed to update existing member:', updateErrorData);
+          // Don't throw error, just log and continue
+          return null;
+        }
+      }
+      
+      // For other errors, log but don't throw to prevent breaking the workflow
+      console.error(`Mailchimp API error: ${errorData.detail || response.statusText}`);
+      return null;
     }
 
     return await response.json();
   } catch (error) {
     console.error('Mailchimp integration error:', error);
+    // Don't throw error to prevent breaking the registration workflow
+    // The email will still be sent via Mandrill even if Mailchimp fails
     return null;
   }
 }
@@ -117,11 +162,11 @@ export function generateEmailTemplate(template: string, data: Record<string, any
           Stay tuned for important onboarding updates as we move toward kickoff.</p>
           
           <div style="text-align: center; margin: 30px 0;">
-            <a href="https://calendly.com/fwc26info/small-business-consultation" 
+            <a href="https://calendly.com/fwc26info/vsp-pre-onboarding-consultation" 
                style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
               👉 Complete Readiness Form
             </a>
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter" 
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/#contact" 
                style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
               👉 Join the SBIP Mailing List
             </a>
@@ -158,7 +203,7 @@ export function generateEmailTemplate(template: string, data: Record<string, any
           <p>Completing these steps will ensure your business is eligible for marketing exposure and event-day activations once the program goes live.</p>
           
           <div style="text-align: center; margin: 30px 0;">
-            <a href="https://calendly.com/fwc26info/small-business-consultation" 
+            <a href="https://calendly.com/fwc26info/vsp-pre-onboarding-consultation" 
                style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
               👉 Access Readiness Form
             </a>
@@ -291,8 +336,8 @@ Next Steps:
 Program Launch Date: February 17, 2026
 Stay tuned for important onboarding updates as we move toward kickoff.
 
-Complete Readiness Form: https://calendly.com/fwc26info/small-business-consultation
-Join the SBIP Mailing List: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/newsletter
+Complete Readiness Form: https://calendly.com/fwc26info/vsp-pre-onboarding-consultation
+Join the SBIP Mailing List: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/#contact
 
 Download Program Guidelines & FAQ: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_SBIP_Guidelines_and_FAQ.pdf
 
@@ -318,7 +363,7 @@ Here's how to make the most of your participation before the FWC26 Small Busines
 
 Completing these steps will ensure your business is eligible for marketing exposure and event-day activations once the program goes live.
 
-Access Readiness Form: https://calendly.com/fwc26info/small-business-consultation
+Access Readiness Form: https://calendly.com/fwc26info/vsp-pre-onboarding-consultation
 Join Orientation Waitlist: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/vendor-support
 
 For support or inquiries:
