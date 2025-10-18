@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Toast from '@/components/Toast';
 import { uploadToCloudinary, validateFile } from '@/lib/cloudinary';
+import CountdownTimer from '@/components/CountdownTimer';
 
 export default function VendorSupportPage() {
   const [activeForm, setActiveForm] = useState<'small-business' | 'vendor-initiative'>('small-business');
@@ -230,7 +231,7 @@ export default function VendorSupportPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
-            <div className="group bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-white p-8 rounded-2xl flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <h2 className="text-3xl font-bold text-blue-600 mb-6">FWC26 Small Business Initiative Program (SBIP)</h2>
               <p className="text-gray-700 mb-6">
                 Empowering local entrepreneurs for FIFA World Cup 2026™. Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
@@ -242,6 +243,9 @@ export default function VendorSupportPage() {
                 <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
                   Pre-Registration Open Now!
                 </span>
+              </div>
+              <div className="mb-6">
+                <CountdownTimer />
               </div>
               <ul className="space-y-3 text-gray-700 mb-8">
                 <li className="flex items-start gap-3">
@@ -449,8 +453,124 @@ export default function VendorSupportPage() {
         </div>
       </section>
 
+      {/* Two Enrollment Tracks */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">Choose Your Enrollment Track</h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+              We offer two specialized tracks to cater to different business timelines and preparation needs for FIFA 2026.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Pre-Tournament Readiness Track */}
+              <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div className="text-center my-6">
+                  <h3 className="text-2xl font-bold text-blue-600 mb-2">Pre-Tournament Readiness Track</h3>
+                  <p className="text-gray-600">For vendors preparing months in advance</p>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Early Planning & Permits</h4>
+                      <p className="text-sm text-gray-600">Get ahead with early permit applications and compliance preparation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Extended Support Period</h4>
+                      <p className="text-sm text-gray-600">6+ months of dedicated support and guidance</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Priority Access</h4>
+                      <p className="text-sm text-gray-600">First access to premium vendor locations and opportunities</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Comprehensive Training</h4>
+                      <p className="text-sm text-gray-600">In-depth workshops on FIFA compliance and business optimization</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <button
+                    onClick={() => {
+                      setActiveForm('small-business');
+                      document.getElementById('registration-forms')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Enroll in Pre-Tournament Track
+                  </button>
+                </div>
+              </div>
+
+              {/* Tournament Operations Track */}
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div className="text-center my-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Tournament Operations Track</h3>
+                  <p className="text-slate-200">For vendors joining around tournament launch</p>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <span className="text-white font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-slate-200">Fast-Track Setup</h4>
+                      <p className="text-sm text-slate-300">Quick permit processing and rapid business setup</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-white font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-slate-200">Focused Operations</h4>
+                      <p className="text-sm text-slate-300">Intensive 2-3 month preparation focused on tournament operations</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-white font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-slate-200">Real-Time Support</h4>
+                      <p className="text-sm text-slate-300">On-call assistance during tournament events</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-white font-bold text-lg">✓</span>
+                    <div>
+                      <h4 className="font-semibold text-slate-200">Marketing Focus</h4>
+                      <p className="text-sm text-slate-300">Emphasis on marketing strategies and customer engagement</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <button
+                    onClick={() => {
+                      setActiveForm('vendor-initiative');
+                      document.getElementById('registration-forms')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full py-3 bg-white text-slate-800 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Enroll in Operations Track
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Registration Forms */}
-      <section className="py-16 bg-slate-50">
+      <section id="registration-forms" className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Program Registration</h2>

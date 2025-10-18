@@ -142,6 +142,40 @@ export function generateEmailTemplate(template: string, data: Record<string, any
         </div>
       `;
 
+    case 'small-business-followup':
+      return `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #2563eb;">Your FWC26 SBIP Pre-Launch Checklist</h1>
+          <p>Hi ${data.name},</p>
+          <p>Here's how to make the most of your participation before the FWC26 Small Business Initiative Program launches:</p>
+          
+          <ul style="margin: 20px 0; padding-left: 20px;">
+            <li>Finalize your business readiness form</li>
+            <li>Attend our virtual orientation session (link coming soon)</li>
+            <li>Follow @fwc26_canada on Instagram for daily updates and opportunities</li>
+          </ul>
+          
+          <p>Completing these steps will ensure your business is eligible for marketing exposure and event-day activations once the program goes live.</p>
+          
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="https://calendly.com/fwc26info/small-business-consultation" 
+               style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Access Readiness Form
+            </a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/vendor-support" 
+               style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Join Orientation Waitlist
+            </a>
+          </div>
+          
+          <p><strong>For support or inquiries:</strong><br>
+          ■ support@fwc26.ca<br>
+          ■ www.fwc26.ca | Instagram: @fwc26_canada</p>
+          
+          <p>Warm regards,<br>FWC26 SBIP / Support team</p>
+        </div>
+      `;
+
     case 'vendor-initiative-welcome':
       return `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -177,6 +211,46 @@ export function generateEmailTemplate(template: string, data: Record<string, any
               👉 Join Our Email List
             </a>
           </div>
+          
+          <p>Warm Regards,<br>FWC26 Vendor support program / Support team</p>
+        </div>
+      `;
+
+    case 'vendor-initiative-followup':
+      return `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #1f2937;">Your FWC26 Vendor Onboarding — What's Next</h1>
+          <p>Hi ${data.name},</p>
+          <p>Your registration for the FWC26 Vendor Support Program is confirmed!</p>
+          <p>Over the next few weeks, our team will share detailed onboarding information, including how to:</p>
+          
+          <ul style="margin: 20px 0; padding-left: 20px;">
+            <li>Upload your vendor documents (licenses, insurance, etc.)</li>
+            <li>Access city procurement portals</li>
+            <li>Participate in the pre-launch info session</li>
+          </ul>
+          
+          <p><strong>To stay prepared:</strong></p>
+          <ul style="margin: 20px 0; padding-left: 20px;">
+            <li>Make sure your business documents are current</li>
+            <li>Watch for our next update confirming your onboarding session schedule</li>
+          </ul>
+          
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/vendor-support" 
+               style="background-color: #1f2937; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Join Vendor Orientation List
+            </a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_VSP_Guidelines_and_FAQ.pdf" 
+               style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin: 10px;">
+              👉 Access Program FAQ
+            </a>
+          </div>
+          
+          <p><strong>For support or inquiries:</strong><br>
+          ■ support@fwc26.ca<br>
+          ■ www.fwc26.ca<br>
+          Instagram: @fwc26_canada</p>
           
           <p>Warm Regards,<br>FWC26 Vendor support program / Support team</p>
         </div>
@@ -230,6 +304,31 @@ Warm regards,
 FWC26 SBIP / Support team
       `;
 
+    case 'small-business-followup':
+      return `
+Your FWC26 SBIP Pre-Launch Checklist
+
+Hi ${data.name},
+
+Here's how to make the most of your participation before the FWC26 Small Business Initiative Program launches:
+
+• Finalize your business readiness form
+• Attend our virtual orientation session (link coming soon)
+• Follow @fwc26_canada on Instagram for daily updates and opportunities
+
+Completing these steps will ensure your business is eligible for marketing exposure and event-day activations once the program goes live.
+
+Access Readiness Form: https://calendly.com/fwc26info/small-business-consultation
+Join Orientation Waitlist: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/vendor-support
+
+For support or inquiries:
+■ support@fwc26.ca
+■ www.fwc26.ca | Instagram: @fwc26_canada
+
+Warm regards,
+FWC26 SBIP / Support team
+      `;
+
     case 'vendor-initiative-welcome':
       return `
 Welcome to the FWC26 Vendor Support Program!
@@ -257,6 +356,35 @@ Warm Regards,
 FWC26 Vendor support program / Support team
       `;
 
+    case 'vendor-initiative-followup':
+      return `
+Your FWC26 Vendor Onboarding — What's Next
+
+Hi ${data.name},
+
+Your registration for the FWC26 Vendor Support Program is confirmed!
+
+Over the next few weeks, our team will share detailed onboarding information, including how to:
+• Upload your vendor documents (licenses, insurance, etc.)
+• Access city procurement portals
+• Participate in the pre-launch info session
+
+To stay prepared:
+• Make sure your business documents are current
+• Watch for our next update confirming your onboarding session schedule
+
+Join Vendor Orientation List: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/vendor-support
+Access Program FAQ: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.fwc26.ca'}/docs/FWC26_VSP_Guidelines_and_FAQ.pdf
+
+For support or inquiries:
+■ support@fwc26.ca
+■ www.fwc26.ca
+Instagram: @fwc26_canada
+
+Warm Regards,
+FWC26 Vendor support program / Support team
+      `;
+
     default:
       return `
 Thank you for your interest in FWC26!
@@ -268,6 +396,63 @@ Thank you for your interest in our FIFA 2026 business programs. We'll be in touc
 Best regards,
 The FWC26 Team
       `;
+  }
+}
+
+// Schedule follow-up email (for both programs)
+export async function scheduleFollowUpEmail(data: MailingListData, delayDays: number = 3, programType: 'small-business' | 'vendor-initiative' = 'vendor-initiative') {
+  try {
+    const { addScheduledEmail } = await import('./cron-jobs');
+    
+    const emailType: 'small-business-followup' | 'vendor-initiative-followup' = 
+      programType === 'small-business' ? 'small-business-followup' : 'vendor-initiative-followup';
+    
+    const followUpData = {
+      id: `email_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      customFields: data.customFields,
+      scheduledFor: new Date(Date.now() + delayDays * 24 * 60 * 60 * 1000), // 3 days from now
+      emailType,
+      sent: false,
+      createdAt: new Date()
+    };
+
+    addScheduledEmail(followUpData);
+    console.log('Follow-up email scheduled for:', followUpData.scheduledFor);
+    
+    return { success: true, scheduledFor: followUpData.scheduledFor };
+  } catch (error) {
+    console.error('Follow-up scheduling error:', error);
+    return { success: false, error };
+  }
+}
+
+// Send follow-up email (to be called by scheduled job)
+export async function sendFollowUpEmail(data: MailingListData, emailType: 'small-business-followup' | 'vendor-initiative-followup' = 'vendor-initiative-followup') {
+  try {
+    const emailData: EmailData = {
+      to: data.email,
+      subject: emailType === 'small-business-followup' 
+        ? 'Your FWC26 SBIP Pre-Launch Checklist'
+        : 'Your FWC26 Vendor Onboarding — What\'s Next',
+      template: emailType,
+      data: {
+        name: data.firstName,
+        businessName: data.customFields.businessName,
+        businessType: data.customFields.businessType,
+        city: data.customFields.city || 'your city'
+      }
+    };
+
+    await sendConfirmationEmail(emailData);
+    console.log('Follow-up email sent successfully to:', data.email);
+    
+    return { success: true };
+  } catch (error) {
+    console.error('Follow-up email sending error:', error);
+    return { success: false, error };
   }
 }
 
@@ -293,6 +478,9 @@ export async function triggerAutomationWorkflow(data: MailingListData, programTy
     };
 
     await sendConfirmationEmail(emailData);
+
+    // Schedule follow-up email for both programs (3 days later)
+    await scheduleFollowUpEmail(data, 3, programType);
 
     return { success: true };
   } catch (error) {
