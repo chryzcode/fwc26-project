@@ -245,7 +245,11 @@ export default function VendorSupportPage() {
                 </span>
               </div>
               <div className="mb-6">
-                <CountdownTimer />
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-gray-600 mb-2">Program Launch Countdown</p>
+                  <CountdownTimer targetDate={new Date('2026-02-17T00:00:00')} textColor="text-blue-600" />
+                  <p className="text-xs text-gray-500 mt-1">Until FWC26 Small Business Initiative Program Launch</p>
+                </div>
               </div>
               <ul className="space-y-3 text-gray-700 mb-8">
                 <li className="flex items-start gap-3">
