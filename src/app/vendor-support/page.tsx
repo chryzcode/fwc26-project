@@ -217,9 +217,9 @@ export default function VendorSupportPage() {
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">FWC26 Vendor Support Services</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">FWC26 Programs</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
-            Navigate FIFA 2026 vendor requirements with expert guidance. From permits to operations, we've got you covered.
+            Choose your path to FIFA 2026 success. Join our comprehensive programs designed for small businesses and vendors.
           </p>
           <div className="inline-flex items-center justify-center px-4 md:px-6 py-2 mb-6 text-base md:text-lg font-bold rounded-full bg-white/20 text-white" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
             🚀 Launching March 2026

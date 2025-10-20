@@ -173,39 +173,102 @@ export default function Home() {
           </div>
           {/* Restore original grid and card design */}
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Opportunity Card */}
+            {/* SBIP Program Card */}
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-500/5" />
-              <div className="relative p-8">
-                <div className="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center mb-6">
-                  <div className="text-2xl">🚀</div>
+              <div className="relative p-8 flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-blue-600 mb-4">FWC26 Small Business Initiative Program (SBIP)</h3>
+                <p className="text-gray-700 mb-6">
+                  Empowering local entrepreneurs for FIFA World Cup 2026™. Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
+                </p>
+                <div className="mb-6">
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-blue-600 text-white mb-2">
+                    Launch Date: February 17, 2026
+                  </span>
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
+                    Pre-Registration Open Now!
+                  </span>
                 </div>
-                                  <h3 className="text-2xl font-bold text-blue-600 mb-4">Why This Matters</h3>
-                <ul className="space-y-4 text-gray-900">
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">⚽</span><span>Over 1.2M spectators across Vancouver & Toronto</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">🎉</span><span>High demand for fan engagement, food, merch & digital experiences</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">💰</span><span>Multi-million dollar untapped revenue potential for small businesses</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">🌎</span><span>Global exposure with visitors from around the world</span></li>
+                <div className="mb-6">
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-gray-600 mb-2">Program Launch Countdown</p>
+                    <CountdownTimer targetDate={new Date('2026-02-17T00:00:00')} textColor="text-blue-600" />
+                    <p className="text-xs text-gray-500 mt-1">Until FWC26 Small Business Initiative Program Launch</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 text-gray-700 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>Vendor application & compliance support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>Licensing & permit assistance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>Business setup & documentation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>Marketing & operations strategy</span>
+                  </li>
                 </ul>
+                <div className="text-center mt-auto">
+                  <Link href="/vendor-support" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                    Pre-Register Now
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
-            {/* Problem Card */}
+            {/* VSP Program Card */}
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-              <div className="relative p-8">
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-                  <div className="text-2xl">⚠️</div>
+              <div className="relative p-8 flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-white mb-4">FWC26 Vendor Support Program (VSP)</h3>
+                <p className="text-slate-200 mb-6">
+                  Vendor Support Services are designed to help navigate the complex requirements of vending during the FIFA World Cup 2026, encompassing applications and permits, as well as marketing and business readiness.
+                </p>
+                <div className="mb-6">
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-slate-600 text-white mb-2">
+                    Launch Date: March 2026
+                  </span>
+                  <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
+                    Registration Open Now!
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">The Challenge</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">❌</span><span className="text-slate-200">Businesses lack event-specific strategy</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">⏰</span><span className="text-slate-200">Tight timelines & high competition for prime locations</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">📊</span><span className="text-slate-200">Difficulty in measuring ROI and tracking success</span></li>
-                  <li className="flex items-start gap-3"><span className="text-xl mt-0.5">🌉</span><span className="text-slate-200">Navigating local regulations and FIFA requirements</span></li>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Vendor Application & Compliance Support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Licensing & Permit Assistance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Public Viewing & FIFA Licensing Support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Business Setup & Documentation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">✓</span>
+                    <span className="text-slate-200">Vendor Education & Strategy Sessions</span>
+                  </li>
                 </ul>
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-slate-300 mb-4">Don't miss out on this once-in-a-generation opportunity.</p>
-                  <Link href="/about-us" className="inline-flex items-center text-white font-medium group">Get expert guidance<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg></Link>
+                <div className="text-center mt-auto">
+                  <Link href="/vendor-support" className="inline-flex items-center px-6 py-3 bg-white text-slate-800 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+                    Enroll Now
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -218,63 +281,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Offerings */}
-      <section id="services" className="py-20 md:py-28 bg-white">
-        <div className="container px-4 mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-                            <span className="inline-block px-4 py-1.5 text-lg font-bold rounded-full bg-white/20 text-blue-600 mb-4">Our Solutions (tiered services)</span>
-                          <h2 className="text-4xl font-extrabold text-blue-600 mb-6">FIFA 2026 Business Consulting - Comprehensive Business Solutions</h2>
-            <p className="text-lg text-secondary text-center">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
-            {/* Service Cards with background images */}
-            <ServiceCard
-              title="Strategy Sessions"
-              description="Personalized consultations to validate your business idea and create a winning strategy for FIFA 2026."
-              features={["Market analysis", "Revenue modeling", "Competitive positioning"]}
-              backgroundImage="/Strategy-Session.jpg"
-              isFree={true}
-              calendlyUrl="https://calendly.com/fwc26info/30min"
-            />
-            
-                         <ServiceCard
-               title="Business Development Support (Tier 2)"
-               description="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth."
-               features={["4 weeks / 4 sessions", "2 hours per session", "3 follow-up sessions", "Pricing strategy", "Partnership opportunities", "Revenue streams"]}
-               backgroundImage="/Full-Monetization-Blueprint.jpg"
-               isFree={false}
-               serviceName="Business Development Support (Tier 2)"
-               amount={1299}
-               serviceDescription="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth"
-               tier={2}
-             />
-             
-             <ServiceCard
-               title="Business Launch Support (Tier 3)"
-               description="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
-               features={["8 weeks / 8 sessions", "2 hours per session", "Brand development", "Marketing execution", "Operational setup", "Full launch support"]}
-               backgroundImage="/Business-Launch-Support.jpg"
-               isFree={false}
-               serviceName="Business Launch Support (Tier 3)"
-               amount={3999}
-               serviceDescription="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
-               tier={3}
-             />
-             
-             <ServiceCard
-               title="Vendor Support Services"
-               description="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
-               features={["Vendor Application Support", "Permit & License Assistance", "FIFA Licensing Support", "Business Setup Documentation", "Vendor Education Sessions", "Ongoing Tournament Support"]}
-               backgroundImage="/Commercial-Opportunity.jpg"
-               isFree={false}
-               serviceName="Vendor Support Services"
-               amount={1499}
-               serviceDescription="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
-               tier={4}
-             />
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-gradient-to-b from-white to-slate-50">
