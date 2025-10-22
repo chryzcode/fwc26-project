@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Toast from '@/components/Toast';
 import { uploadToCloudinary, validateFile } from '@/lib/cloudinary';
@@ -14,6 +14,24 @@ export default function VendorSupportPage() {
     type: 'success',
     isVisible: false
   });
+
+  // Handle URL parameters to set active form
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const form = urlParams.get('form');
+    if (form === 'sbip' || form === 'small-business') {
+      setActiveForm('small-business');
+    } else if (form === 'vsp' || form === 'vendor-initiative') {
+      setActiveForm('vendor-initiative');
+    }
+    
+    // Scroll to forms if hash is present
+    if (window.location.hash === '#registration-forms') {
+      setTimeout(() => {
+        document.getElementById('registration-forms')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
 
   const [smallBusinessForm, setSmallBusinessForm] = useState({
     name: '',
@@ -251,6 +269,20 @@ export default function VendorSupportPage() {
                   <p className="text-xs text-gray-500 mt-1">Until FWC26 Small Business Initiative Program Launch</p>
                 </div>
               </div>
+              <div className="text-center mb-6">
+                <button
+                  onClick={() => {
+                    setActiveForm('small-business');
+                    document.getElementById('registration-forms')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Enroll Now
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </button>
+              </div>
               <ul className="space-y-3 text-gray-700 mb-8">
                 <li className="flex items-start gap-3">
                   <span className="text-blue-600 font-bold">✓</span>
@@ -298,6 +330,20 @@ export default function VendorSupportPage() {
                   <span className="inline-block px-3 py-1 text-sm font-bold rounded-full bg-green-600 text-white ml-2">
                     Registration Open Now!
                   </span>
+                </div>
+                <div className="text-center mb-6">
+                  <button
+                    onClick={() => {
+                      setActiveForm('vendor-initiative');
+                      document.getElementById('registration-forms')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center px-6 py-3 bg-white text-slate-800 font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    Pre-Enroll Now
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </button>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">

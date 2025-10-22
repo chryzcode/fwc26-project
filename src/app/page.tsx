@@ -281,6 +281,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service Offerings */}
+      <section id="services" className="py-20 md:py-28 bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-1.5 text-lg font-bold rounded-full bg-white/20 text-blue-600 mb-4">Our Solutions (tiered services)</span>
+            <h2 className="text-4xl font-extrabold text-blue-600 mb-6">FIFA 2026 Business Consulting - Comprehensive Business Solutions</h2>
+            <p className="text-lg text-secondary text-center">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
+            {/* Service Cards with background images */}
+            <ServiceCard
+              title="Strategy Sessions"
+              description="Personalized consultations to validate your business idea and create a winning strategy for FIFA 2026."
+              features={["Market analysis", "Revenue modeling", "Competitive positioning"]}
+              backgroundImage="/Strategy-Session.jpg"
+              isFree={true}
+              calendlyUrl="https://calendly.com/fwc26info/30min"
+            />
+            
+            <ServiceCard
+              title="Business Development Support (Tier 2)"
+              description="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth."
+              features={["4 weeks / 4 sessions", "2 hours per session", "3 follow-up sessions", "Pricing strategy", "Partnership opportunities", "Revenue streams"]}
+              backgroundImage="/Full-Monetization-Blueprint.jpg"
+              isFree={false}
+              serviceName="Business Development Support (Tier 2)"
+              amount={1299}
+              serviceDescription="Comprehensive 4-week program with personalized sessions and follow-up support to accelerate your FIFA 2026 business growth"
+              tier={2}
+            />
+            
+            <ServiceCard
+              title="Business Launch Support (Tier 3)"
+              description="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
+              features={["8 weeks / 8 sessions", "2 hours per session", "Brand development", "Marketing execution", "Operational setup", "Full launch support"]}
+              backgroundImage="/Business-Launch-Support.jpg"
+              isFree={false}
+              serviceName="Business Launch Support (Tier 3)"
+              amount={3999}
+              serviceDescription="Complete 8-week intensive program to launch your FIFA 2026 business with full operational support. Program begins before or starting game day; enrollment closes two weeks before opening."
+              tier={3}
+            />
+            
+            <ServiceCard
+              title="Vendor Support Services"
+              description="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
+              features={["Vendor Application Support", "Permit & License Assistance", "FIFA Licensing Support", "Business Setup Documentation", "Vendor Education Sessions", "Ongoing Tournament Support"]}
+              backgroundImage="/Commercial-Opportunity.jpg"
+              isFree={false}
+              serviceName="Vendor Support Services"
+              amount={1499}
+              serviceDescription="Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance."
+              tier={4}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-gradient-to-b from-white to-slate-50">
