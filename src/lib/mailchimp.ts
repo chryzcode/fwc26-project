@@ -15,8 +15,8 @@ interface EmailData {
 
 export async function sendTransactionalEmail(emailData: EmailData) {
   const MANDRILL_API_KEY = process.env.MANDRILL_API_KEY;
-  const FROM_EMAIL = process.env.MANDRILL_FROM_EMAIL || 'support@fwc26.ca';
-  const FROM_NAME = process.env.MANDRILL_FROM_NAME || 'FWC26 Marketing Group';
+  const FROM_EMAIL = process.env.MANDRILL_FROM_EMAIL;
+  const FROM_NAME = process.env.MANDRILL_FROM_NAME;
 
   if (!MANDRILL_API_KEY) {
     console.error('Mandrill configuration missing');

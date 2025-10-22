@@ -33,6 +33,8 @@ export default function ServiceCard({
         return process.env.NEXT_PUBLIC_CALENDLY_TIER2_URL || "https://calendly.com/fwc26info/full-monetization-blueprint-tier-2";
       case 3:
         return process.env.NEXT_PUBLIC_CALENDLY_TIER3_URL || "https://calendly.com/fwc26info/business-launch-support-tier-3";
+      case 4:
+        return process.env.NEXT_PUBLIC_CALENDLY_TIER4_URL || "https://calendly.com/fwc26info/vendor-support-services-tier-4";
       default:
         return process.env.NEXT_PUBLIC_CALENDLY_TIER1_URL || "https://calendly.com/fwc26info/30min?utm_source=stripe&utm_medium=checkout&utm_campaign=fifa2026";
     }
@@ -44,6 +46,8 @@ export default function ServiceCard({
       window.location.href = '/book?service=tier2';
     } else if (tier === 3) {
       window.location.href = '/book?service=tier3';
+    } else if (tier === 4) {
+      window.location.href = '/vendor-support';
     } else {
       // Default to tier 1
       window.location.href = '/book';
