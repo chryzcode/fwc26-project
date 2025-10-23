@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Toast from '@/components/Toast';
 import { uploadToCloudinary, validateFile } from '@/lib/cloudinary';
@@ -14,6 +14,10 @@ export default function VendorSupportPage() {
     type: 'success',
     isVisible: false
   });
+
+  // Refs for file inputs
+  const smallBusinessFileRef = useRef<HTMLInputElement>(null);
+  const vendorFileRef = useRef<HTMLInputElement>(null);
 
   // Handle URL parameters to set active form
   useEffect(() => {
@@ -133,6 +137,11 @@ export default function VendorSupportPage() {
           businessLicense: null,
           businessLicenseUrl: ''
         });
+        
+        // Clear file input
+        if (smallBusinessFileRef.current) {
+          smallBusinessFileRef.current.value = '';
+        }
       } else {
         const errorMessage = data.error || 'There was an error submitting your registration. Please try again.';
         setSubmitMessage({ 
@@ -202,6 +211,11 @@ export default function VendorSupportPage() {
           businessLicense: null,
           businessLicenseUrl: ''
         });
+        
+        // Clear file input
+        if (vendorFileRef.current) {
+          vendorFileRef.current.value = '';
+        }
       } else {
         const errorMessage = data.error || 'There was an error submitting your pre-registration. Please try again.';
         setSubmitMessage({ 
@@ -778,6 +792,7 @@ export default function VendorSupportPage() {
                     <input
                       type="file"
                       id="smallBusinessLicense"
+                      ref={smallBusinessFileRef}
                       accept=".pdf,.jpg,.jpeg,.png,.gif,.webp"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       onChange={(e) => {
@@ -923,6 +938,7 @@ export default function VendorSupportPage() {
                     <input
                       type="file"
                       id="vendorBusinessLicense"
+                      ref={vendorFileRef}
                       accept=".pdf,.jpg,.jpeg,.png,.gif,.webp"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                       onChange={(e) => {
