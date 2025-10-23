@@ -106,9 +106,9 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{background: 'none'}}>
          {/* Countdown timer - centered on mobile, right on desktop */}
-         <div className="absolute top-4 md:top-8 left-1/2 md:left-auto right-auto md:right-12 z-20 transform -translate-x-1/2 md:translate-x-0">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full shadow-lg font-bold text-lg flex items-center gap-2 border-2 border-white min-w-max w-auto">
-            <span className="mr-2 text-white">FIFA 2026:</span>
+         <div className="absolute top-3 md:top-8 left-1/2 md:left-auto right-auto md:right-12 z-20 transform -translate-x-1/2 md:translate-x-0">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full shadow-lg font-bold text-xs sm:text-sm md:text-lg flex items-center gap-1 sm:gap-2 border-2 border-white min-w-max w-auto">
+            <span className="mr-1 sm:mr-2 text-white">FIFA 2026:</span>
             <CountdownTimer />
           </div>
           </div>
@@ -139,25 +139,25 @@ export default function Home() {
             
 
             <div className="my-20">
-            <h1 className="text-6xl font-extrabold mb-10 text-white drop-shadow-xl animate-fade-in px-4 md:px-8" style={{textShadow: '0 2px 16px rgba(0,0,0,0.9)'}}>FIFA World Cup 2026 Business Opportunities</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 md:mb-10 text-white drop-shadow-xl animate-fade-in px-4 md:px-8" style={{textShadow: '0 2px 16px rgba(0,0,0,0.9)'}}>FIFA World Cup 2026 Business Opportunities</h1>
             
             {/* Highlighted USP Section */}
             <div className="mb-8 animate-fade-in animation-delay-200 px-4 md:px-8">
               <div className="bg-white/20 text-white max-w-4xl mx-auto rounded-2xl p-8 md:p-12 border border-white/30 shadow-2xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
                 <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-black mb-4 tracking-tight">$940M</div>
-                  <div className="text-2xl md:text-3xl font-bold mb-4">ECONOMIC OUTPUT</div>
-                  <div className="text-lg md:text-xl font-semibold">Unmatched economic impact for GTA & Vancouver</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-4 tracking-tight">$940M</div>
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">ECONOMIC OUTPUT</div>
+                  <div className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold">Unmatched economic impact for GTA & Vancouver</div>
                 </div>
               </div>
             </div>
             
-            <p className="text-2xl text-white mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-300 px-4 md:px-8" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Hosting the tournament will bring an unprecedented positive economic output to the GTA and Vancouver. A contribution that will be felt far past the tournament's close.</p>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-300 px-4 md:px-8" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Hosting the tournament will bring an unprecedented positive economic output to the GTA and Vancouver. A contribution that will be felt far past the tournament's close.</p>
             </div>
         
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-in animation-delay-300">
-              <a href="/blog" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[200px] text-center">Discover Opportunities</a>
-              <Link href="/book" className="px-8 py-4 rounded-xl border-2 border-white text-white font-bold text-lg bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 min-w-[200px] text-center">Book Free Discovery</Link>
+              <a href="/blog" className="px-6 py-3 md:px-8 md:py-4 rounded-xl border-2 border-white text-white font-bold text-sm md:text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[180px] md:min-w-[200px] text-center">Discover Opportunities</a>
+              <Link href="/book" className="px-6 py-3 md:px-8 md:py-4 rounded-xl border-2 border-white text-white font-bold text-sm md:text-lg bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 min-w-[180px] md:min-w-[200px] text-center">Book Free Discovery</Link>
             </div>
           </div>
         </div>
@@ -167,18 +167,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="container px-4 mx-auto relative z-10 max-w-6xl">
           <div className="text-center max-w-6xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-lg font-bold rounded-full bg-white/20 text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Commercial Opportunities</span>
-            <h2 className="text-4xl font-extrabold text-white mb-6" style={{textShadow: '0 2px 16px rgba(0,0,0,0.9)'}}>FIFA 2026 Small Business Support - The Biggest Sporting Event in North America</h2>
-            <p className="text-lg text-white text-center max-w-3xl mx-auto py-5" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>The FIFA World Cup 2026 presents an unprecedented opportunity for businesses in Vancouver and Toronto to thrive on the global stage.</p>
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 text-sm md:text-lg font-bold rounded-full bg-white/20 text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Commercial Opportunities</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 md:mb-6" style={{textShadow: '0 2px 16px rgba(0,0,0,0.9)'}}>FIFA 2026 Small Business Support - The Biggest Sporting Event in North America</h2>
+            <p className="text-sm sm:text-base md:text-lg text-white text-center max-w-3xl mx-auto py-3 md:py-5" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>The FIFA World Cup 2026 presents an unprecedented opportunity for businesses in Vancouver and Toronto to thrive on the global stage.</p>
           </div>
           {/* Restore original grid and card design */}
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* SBIP Program Card */}
             <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-500/5" />
-              <div className="relative p-8 flex flex-col h-full">
-                <h3 className="text-2xl font-bold text-blue-600 mb-4">FWC26 Small Business Initiative Program (SBIP)</h3>
-                <p className="text-gray-700 mb-6">
+              <div className="relative p-6 md:p-8 flex flex-col h-full">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 mb-3 md:mb-4">FWC26 Small Business Initiative Program (SBIP)</h3>
+                <p className="text-sm sm:text-base text-gray-700 mb-4 md:mb-6">
                   Empowering local entrepreneurs for FIFA World Cup 2026™. Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
                 </p>
                 <div className="mb-6">
@@ -227,9 +227,9 @@ export default function Home() {
             {/* VSP Program Card */}
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-              <div className="relative p-8 flex flex-col h-full">
-                <h3 className="text-2xl font-bold text-white mb-4">FWC26 Vendor Support Program (VSP)</h3>
-                <p className="text-slate-200 mb-6">
+              <div className="relative p-6 md:p-8 flex flex-col h-full">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">FWC26 Vendor Support Program (VSP)</h3>
+                <p className="text-sm sm:text-base text-slate-200 mb-4 md:mb-6">
                   Vendor Support Services are designed to help navigate the complex requirements of vending during the FIFA World Cup 2026, encompassing applications and permits, as well as marketing and business readiness.
                 </p>
                 <div className="mb-6">
@@ -285,9 +285,9 @@ export default function Home() {
       <section id="services" className="py-20 md:py-28 bg-white">
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-lg font-bold rounded-full bg-white/20 text-blue-600 mb-4">Our Solutions (tiered services)</span>
-            <h2 className="text-4xl font-extrabold text-blue-600 mb-6">FIFA 2026 Business Consulting - Comprehensive Business Solutions</h2>
-            <p className="text-lg text-secondary text-center">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 text-sm md:text-lg font-bold rounded-full bg-white/20 text-blue-600 mb-4">Our Solutions (tiered services)</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 mb-4 md:mb-6">FIFA 2026 Business Consulting - Comprehensive Business Solutions</h2>
+            <p className="text-sm sm:text-base md:text-lg text-secondary text-center">We provide end-to-end support to help your business thrive during the FIFA World Cup 2026</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
             {/* Service Cards with background images */}
@@ -343,18 +343,18 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-                            <span className="inline-block px-4 py-1.5 text-lg font-medium rounded-full bg-blue-600/10 text-blue-600 mb-4">Client Success Stories</span>
-                          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6">Trusted by <span className="text-secondary">Businesses</span> Like Yours</h2>
-            <p className="text-lg text-secondary max-w-2xl mx-auto text-center">Don't just take our word for it. Here's what our clients say about working with us.</p>
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 text-sm md:text-lg font-medium rounded-full bg-blue-600/10 text-blue-600 mb-4">Client Success Stories</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-4 md:mb-6">Trusted by <span className="text-secondary">Businesses</span> Like Yours</h2>
+            <p className="text-sm sm:text-base md:text-lg text-secondary max-w-2xl mx-auto text-center">Don't just take our word for it. Here's what our clients say about working with us.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"The strategy session with FWC26 Consulting was incredibly eye-opening. I came in with just a general idea and walked away with a clear, actionable roadmap tailored to my business goals. They asked the right questions, challenged my assumptions, and helped me see real opportunities."</blockquote>
+              <blockquote className="text-sm sm:text-base md:text-lg text-slate-700 mb-4 md:mb-6 flex-grow">"The strategy session with FWC26 Consulting was incredibly eye-opening. I came in with just a general idea and walked away with a clear, actionable roadmap tailored to my business goals. They asked the right questions, challenged my assumptions, and helped me see real opportunities."</blockquote>
               <div className="flex items-center justify-center mt-auto">
                 <div className="text-center">
                   <p className="font-medium text-slate-900">Kemi O.</p>
@@ -362,13 +362,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"They provided a strategic roadmap that broke things down clearly. Their insights were specific to our industry, and the actionable steps helped us position our business to take full advantage of the upcoming market opportunity."</blockquote>
+              <blockquote className="text-sm sm:text-base md:text-lg text-slate-700 mb-4 md:mb-6 flex-grow">"They provided a strategic roadmap that broke things down clearly. Their insights were specific to our industry, and the actionable steps helped us position our business to take full advantage of the upcoming market opportunity."</blockquote>
               <div className="flex items-center justify-center mt-auto">
                 <div className="text-center">
                   <p className="font-medium text-slate-900">Jason M.</p>
@@ -376,13 +376,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col items-center h-full">
               <div className="flex items-center mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 ))}
               </div>
-              <blockquote className="text-lg text-slate-700 mb-6 flex-grow">"I had an idea but didn't know where to start. The team at FWC26 Consulting helped me validate it, understand my market, and turn it into a viable business plan. Their strategic insight, especially around the FIFA 2026 landscape, gave me the direction I needed."</blockquote>
+              <blockquote className="text-sm sm:text-base md:text-lg text-slate-700 mb-4 md:mb-6 flex-grow">"I had an idea but didn't know where to start. The team at FWC26 Consulting helped me validate it, understand my market, and turn it into a viable business plan. Their strategic insight, especially around the FIFA 2026 landscape, gave me the direction I needed."</blockquote>
               <div className="flex items-center justify-center mt-auto">
                 <div className="text-center">
                   <p className="font-medium text-slate-900">Aisha L.</p>
