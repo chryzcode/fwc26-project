@@ -89,18 +89,18 @@ export default function ServicesAboutUs() {
               </div>
             </div>
           </li>
-          <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Business-Launch-Support.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Full-Service Launch - End-to-end business support">
+          <li className="rounded-xl shadow p-6 border border-blue-100 relative overflow-hidden" style={{backgroundImage: 'url(/Commercial-Opportunity.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} aria-label="FIFA 2026 Vendor Support Services - Comprehensive vendor application and compliance support">
             <div className="absolute inset-0 bg-black/70" />
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Full-Service Launch</h3>
-              <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience.</p>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Vendor Support Services</h3>
+              <p className="text-white mb-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>Comprehensive vendor application and compliance support for FIFA 2026. Navigate permits, licenses, and municipal requirements with expert guidance.</p>
               <div className="flex justify-center">
-                <button 
-                  onClick={() => handleBookAndPay('Full-Service Launch', 1997, 'End-to-end support for launching new products, services, or campaigns tailored to the World Cup audience', 3)}
+                <Link 
+                  href="/vendor-support?form=vsp#registration-forms"
                   className="px-6 py-2 rounded-xl border-2 border-white text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-center bg-white/20 hover:bg-white/30"
                 >
-                  Book & Pay<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-                </button>
+                  Enroll Now<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </Link>
               </div>
             </div>
           </li>
