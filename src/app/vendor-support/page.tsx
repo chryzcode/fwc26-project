@@ -249,8 +249,8 @@ export default function VendorSupportPage() {
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">FWC26 Programs</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">FWC26 Programs</h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-4xl mx-auto">
             Choose your path to FIFA 2026 success. Join our comprehensive programs designed for small businesses and vendors.
           </p>
           <div className="inline-flex items-center justify-center px-4 md:px-6 py-2 mb-6 text-base md:text-lg font-bold rounded-full bg-white/20 text-white" style={{textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>
@@ -263,9 +263,9 @@ export default function VendorSupportPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
-            <div className="group bg-white p-8 rounded-2xl flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              <h2 className="text-3xl font-bold text-blue-600 mb-6">FWC26 Small Business Initiative Program (SBIP)</h2>
-              <p className="text-gray-700 mb-6">
+            <div className="group bg-white p-6 md:p-8 rounded-2xl flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-4 md:mb-6">FWC26 Small Business Initiative Program (SBIP)</h2>
+              <p className="text-sm sm:text-base text-gray-700 mb-4 md:mb-6">
                 Empowering local entrepreneurs for FIFA World Cup 2026™. Comprehensive support for small businesses looking to capitalize on FIFA 2026 opportunities in Toronto and Vancouver.
               </p>
               <div className="mb-6">
@@ -332,9 +332,9 @@ export default function VendorSupportPage() {
 
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
               <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-              <div className="relative p-8 flex flex-col h-full">
-                <h2 className="text-3xl font-bold text-white mb-6">FWC26 Vendor Support Program (VSP)</h2>
-                <p className="text-slate-200 mb-6">
+              <div className="relative p-6 md:p-8 flex flex-col h-full">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">FWC26 Vendor Support Program (VSP)</h2>
+                <p className="text-sm sm:text-base text-slate-200 mb-4 md:mb-6">
                   Vendor Support Services are designed to help navigate the complex requirements of vending during the FIFA World Cup 2026, encompassing applications and permits, as well as marketing and business readiness.
                 </p>
                 <div className="mb-6">

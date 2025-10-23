@@ -87,7 +87,7 @@ export default function CountdownTimer({ targetDate, onComplete, textColor = 'te
 
   return (
     <div className="text-center">
-      <div className={`flex items-center justify-center gap-2 text-sm ${textColor}`}>
+      <div className={`flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base ${textColor}`}>
         <span className="font-bold">{timeLeft.days}d</span>
         <span className="opacity-70">:</span>
         <span className="font-bold">{timeLeft.hours}h</span>

@@ -35,12 +35,12 @@ export default function NavBar() {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3">
           {/* Logo placeholder - replace with actual logo */}
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">F</span>
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-base sm:text-lg">F</span>
           </div>
-          <span className="text-2xl font-black text-blue-900 tracking-wider bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent font-serif">
+          <span className="hidden sm:inline text-lg md:text-2xl font-black text-blue-900 tracking-wider bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent font-serif">
             FWC26 Marketing Group
           </span>
         </Link>
@@ -112,7 +112,7 @@ export default function NavBar() {
               href={link.href}
               ref={i === 0 ? firstLinkRef : undefined}
               onClick={() => setOpen(false)}
-              className="text-blue-900 text-lg font-semibold hover:text-blue-600 transition-colors rounded-md py-2"
+              className="text-blue-900 text-base md:text-lg font-semibold hover:text-blue-600 transition-colors rounded-md py-2"
               tabIndex={open ? 0 : -1}
             >
               {link.label}
