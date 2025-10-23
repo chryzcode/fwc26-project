@@ -48,8 +48,7 @@ export async function uploadToCloudinary(file: File, folder?: string): Promise<C
     formData.append('folder', folder);
   }
 
-  // Add transformations for business documents
-  formData.append('transformation', 'c_limit,w_1200,h_1200,f_auto,q_auto');
+  // Set resource type to auto for automatic detection
   formData.append('resource_type', 'auto');
 
   try {
@@ -105,8 +104,7 @@ export async function uploadToCloudinaryServer(file: File | Buffer, folder?: str
     formData.append('folder', folder);
   }
 
-  // Add transformations for business documents
-  formData.append('transformation', 'c_limit,w_1200,h_1200,f_auto,q_auto');
+  // Set resource type to auto for automatic detection
   formData.append('resource_type', 'auto');
 
   try {
@@ -148,11 +146,10 @@ export function getOptimizedImageUrl(publicId: string, transformations?: string)
   const config = getCloudinaryConfig();
   const baseUrl = `https://res.cloudinary.com/${config.cloudName}/image/upload`;
   
-  if (transformations) {
-    return `${baseUrl}/${transformations}/${publicId}`;
-  }
+  // Default transformations for business documents if none provided
+  const defaultTransformations = transformations || 'c_limit,w_1200,h_1200,f_auto,q_auto';
   
-  return `${baseUrl}/${publicId}`;
+  return `${baseUrl}/${defaultTransformations}/${publicId}`;
 }
 
 // Validate file before upload
